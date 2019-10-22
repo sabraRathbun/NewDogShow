@@ -74,7 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Breeds.cs" />
     <Compile Include="CompetitionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +86,6 @@
     <Compile Include="CurrentlyRegistered.Designer.cs">
       <DependentUpon>CurrentlyRegistered.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dog.cs" />
-    <Compile Include="DogBreed.cs" />
     <Compile Include="DogInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,7 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PullSqlData.cs" />
     <Compile Include="StartupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pawOutlineNew.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common_DogShow\Common_DogShow.csproj">
+      <Project>{b2d3941b-9fc0-4439-bdbd-2cdfacbd8949}</Project>
+      <Name>Common_DogShow</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

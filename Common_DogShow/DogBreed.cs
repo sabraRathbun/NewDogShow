@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DogShow
+namespace Common_DogShow
 {
-    class DogBreed
+    public class DogBreed
     {
         public int DogId { get; set;}
         public string DogGender { get; set; }

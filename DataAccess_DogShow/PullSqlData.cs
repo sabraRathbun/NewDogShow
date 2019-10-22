@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Common_DogShow.BreedGroups;
+using Common_DogShow;
 
-
-namespace DogShow
+namespace DataAccess_DogShow
 {
     class PullSqlData
     {
