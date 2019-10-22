@@ -49,7 +49,7 @@ namespace Service_DogShow
         }
         public void saveComp_Click(object sender, EventArgs e)
         {
-            
+            Console.WriteLine("do the thing");
         }
 
 
