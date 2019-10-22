@@ -9,7 +9,7 @@ using Common_DogShow;
 
 namespace DataAccess_DogShow
 {
-    class PullSqlData
+    public class PullSqlData
     {
         public IEnumerable<string> BreedNames(Classes breedClass)
         {

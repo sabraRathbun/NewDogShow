@@ -67,7 +67,7 @@
             this.selectBreedBtn.TabIndex = 2;
             this.selectBreedBtn.Text = "Select Breed";
             this.selectBreedBtn.UseVisualStyleBackColor = true;
-            this.selectBreedBtn.Click += new System.EventHandler(this.selectBreedBtn_Click);
+            //this.selectBreedBtn.Click += new System.EventHandler(this.selectBreedBtn_Click);
             // 
             // dog2Box
             // 
@@ -156,7 +156,7 @@
             this.selectBtn.TabIndex = 14;
             this.selectBtn.Text = "Select Dogs";
             this.selectBtn.UseVisualStyleBackColor = true;
-            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            //this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
             // 
             // saveComp
             // 
@@ -166,7 +166,7 @@
             this.saveComp.TabIndex = 15;
             this.saveComp.Text = "Save Competition";
             this.saveComp.UseVisualStyleBackColor = true;
-            this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
+            //this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
             // 
             // CompetitionForm
             // 
@@ -194,19 +194,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox breedGroupBox;
-        private System.Windows.Forms.ListBox Dog1Box;
-        private System.Windows.Forms.Button selectBreedBtn;
-        private System.Windows.Forms.ListBox dog2Box;
-        private System.Windows.Forms.ListBox dog3Box;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label firstLbl;
-        private System.Windows.Forms.Label thirdLbl;
-        private System.Windows.Forms.Label secondLbl;
-        private System.Windows.Forms.Button selectBtn;
-        private System.Windows.Forms.Button saveComp;
+        public System.Windows.Forms.ListBox breedGroupBox;
+        public System.Windows.Forms.ListBox Dog1Box;
+        public System.Windows.Forms.Button selectBreedBtn;
+        public System.Windows.Forms.ListBox dog2Box;
+        public System.Windows.Forms.ListBox dog3Box;
+        public System.Windows.Forms.Label firstLbl;
+        public System.Windows.Forms.Label thirdLbl;
+        public System.Windows.Forms.Label secondLbl;
+        public System.Windows.Forms.Button selectBtn;
+        public System.Windows.Forms.Button saveComp;
     }
 }
