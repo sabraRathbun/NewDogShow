@@ -12,9 +12,6 @@ namespace Service_DogShow
     {
         List<string> dogList = new List<string>();
         PullSqlData pull = new PullSqlData();
-        int competitionIDOne;
-        int competitionIDTwo;
-        int competitionIDThree;
         int eventIDOne;
         int eventIDTwo;
         int eventIDThree;
@@ -36,10 +33,6 @@ namespace Service_DogShow
                 two.Items.Add(dog);
                 three.Items.Add(dog);
             }
-        }
-        public void saveComp_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("do the thing");
         }
 
         public List<string> DogPlacements(ListBox breedGroup, string dogOne, string dogTwo, string dogThree)
