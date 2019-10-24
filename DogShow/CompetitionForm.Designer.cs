@@ -67,7 +67,7 @@
             this.selectBreedBtn.TabIndex = 2;
             this.selectBreedBtn.Text = "Select Breed";
             this.selectBreedBtn.UseVisualStyleBackColor = true;
-            //this.selectBreedBtn.Click += new System.EventHandler(this.selectBreedBtn_Click);
+            this.selectBreedBtn.Click += new System.EventHandler(this.selectBreedBtn_Click);
             // 
             // dog2Box
             // 
@@ -121,10 +121,8 @@
             this.firstLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstLbl.Location = new System.Drawing.Point(183, 199);
             this.firstLbl.Name = "firstLbl";
-            this.firstLbl.Size = new System.Drawing.Size(65, 22);
+            this.firstLbl.Size = new System.Drawing.Size(0, 22);
             this.firstLbl.TabIndex = 11;
-            this.firstLbl.Text = "label4";
-            this.firstLbl.Visible = false;
             // 
             // thirdLbl
             // 
@@ -132,10 +130,8 @@
             this.thirdLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdLbl.Location = new System.Drawing.Point(324, 303);
             this.thirdLbl.Name = "thirdLbl";
-            this.thirdLbl.Size = new System.Drawing.Size(65, 22);
+            this.thirdLbl.Size = new System.Drawing.Size(0, 22);
             this.thirdLbl.TabIndex = 12;
-            this.thirdLbl.Text = "label4";
-            this.thirdLbl.Visible = false;
             // 
             // secondLbl
             // 
@@ -143,10 +139,8 @@
             this.secondLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondLbl.Location = new System.Drawing.Point(47, 303);
             this.secondLbl.Name = "secondLbl";
-            this.secondLbl.Size = new System.Drawing.Size(65, 22);
+            this.secondLbl.Size = new System.Drawing.Size(0, 22);
             this.secondLbl.TabIndex = 13;
-            this.secondLbl.Text = "label4";
-            this.secondLbl.Visible = false;
             // 
             // selectBtn
             // 
@@ -156,7 +150,7 @@
             this.selectBtn.TabIndex = 14;
             this.selectBtn.Text = "Select Dogs";
             this.selectBtn.UseVisualStyleBackColor = true;
-            //this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
             // 
             // saveComp
             // 
@@ -166,7 +160,7 @@
             this.saveComp.TabIndex = 15;
             this.saveComp.Text = "Save Competition";
             this.saveComp.UseVisualStyleBackColor = true;
-            //this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
+            this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
             // 
             // CompetitionForm
             // 

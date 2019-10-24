@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DataAccess_DogShow;
-using DogShow;
+
 namespace Service_DogShow
 {
-    class Competition : CompetitionForm
+    public class Competition 
     {
         List<string> dogList = new List<string>();
         PullSqlData pull = new PullSqlData();
-        string dogOne;
-        string dogTwo;
-        string dogThree;
-        string first;
-        string second;
-        string third;
         int competitionIDOne;
         int competitionIDTwo;
         int competitionIDThree;
@@ -30,21 +25,16 @@ namespace Service_DogShow
         int scoreIDTwo;
         int scoreIDThree;
 
-        public void selectBreedBtn_Click(object sender, EventArgs e)
-        {
-            int breedIndex = breedGroupBox.SelectedIndex;
-            if (breedIndex < 0)
-            {
-                return;
-            }
 
+        public void SelectDoggo(ListBox one, ListBox two, ListBox three, int breedIndex)
+        {
             var dogs = pull.RegisteredDogsInClass(breedIndex);
-            Dog1Box.Items.Clear();
+            one.Items.Clear();
             foreach (string dog in dogs)
             {
-                Dog1Box.Items.Add(dog);
-                dog2Box.Items.Add(dog);
-                dog3Box.Items.Add(dog);
+                one.Items.Add(dog);
+                two.Items.Add(dog);
+                three.Items.Add(dog);
             }
         }
         public void saveComp_Click(object sender, EventArgs e)
@@ -52,6 +42,36 @@ namespace Service_DogShow
             Console.WriteLine("do the thing");
         }
 
+        public List<string> DogPlacements(ListBox breedGroup, string dogOne, string dogTwo, string dogThree)
+        {
+            dogList = pull.OrderDogs(breedGroup.SelectedIndex, dogTwo, dogThree, dogOne);
+            
+            return dogList;
+        }
+        public void GetEventID(string first, string second, string third)
+        {
+            eventIDOne = pull.EventID(first);
+            eventIDTwo = pull.EventID(second);
+            eventIDThree = pull.EventID(third);
+        }
+        public void GetDogID(string first, string second, string third)
+        {
+            DogIDOne = pull.DogIdNum(first);
+            DogIDTwo = pull.DogIdNum(second);
+            DogIDThree = pull.DogIdNum(third);
+        }
+        public void GetScoreID(string first, string second, string third)
+        {
+            scoreIDOne = pull.ScoreID(first);
+            scoreIDTwo = pull.ScoreID(second);
+            scoreIDThree = pull.ScoreID(third);
+        }
+        public void InsertDoggo()
+        {
+            pull.InsertCompetition(eventIDOne, 1, DogIDOne, scoreIDOne);
+            pull.InsertCompetition(eventIDTwo, 2, DogIDTwo, scoreIDTwo);
+            pull.InsertCompetition(eventIDThree, 3, DogIDThree, scoreIDThree);
+        }
 
     }
 }

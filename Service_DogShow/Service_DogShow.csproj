@@ -44,9 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Competition.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Competition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,10 +60,9 @@
       <Project>{a2fa0c13-a6b4-49a8-9f25-39cb9def298e}</Project>
       <Name>DataAccess_DogShow</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DogShow\DogShow.csproj">
-      <Project>{79738eb0-0232-44dd-9fb5-186225b09d45}</Project>
-      <Name>DogShow</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
