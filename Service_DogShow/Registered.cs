@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DataAccess_DogShow;
-using System.Windows.Forms;
 using Common_DogShow;
 
 namespace Service_DogShow
