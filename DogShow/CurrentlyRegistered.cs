@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common_DogShow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Service_DogShow;
 
 namespace DogShow
 {
     public partial class CurrentlyRegistered : Form
     {
         List<DogBreed> DogList = new List<DogBreed>();
-        PullSqlData pull = new PullSqlData();
+        Registered register = new Registered();
         int currentIndex;
+        
         public CurrentlyRegistered()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace DogShow
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            DogList = pull.GetDogBreed();
+            DogList = register.GetDogList();
             if (DogList.Any())
             {
                 currentIndex = 1;
@@ -38,6 +41,7 @@ namespace DogShow
                 forwardBtn.Enabled = false;
                 backBtn.Enabled = false;
             }
+
         }
         private void forwardBtn_Click(object sender, EventArgs e)
         {
@@ -58,7 +62,6 @@ namespace DogShow
             }
 
         }
-
         private void backBtn_Click(object sender, EventArgs e)
         {
             currentIndex -= 1;
@@ -78,5 +81,7 @@ namespace DogShow
             }
 
         }
+
     }
+
 }
