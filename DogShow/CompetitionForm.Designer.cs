@@ -41,6 +41,9 @@
             this.secondLbl = new System.Windows.Forms.Label();
             this.selectBtn = new System.Windows.Forms.Button();
             this.saveComp = new System.Windows.Forms.Button();
+            this.dog1LastName = new System.Windows.Forms.ListBox();
+            this.dog2LastName = new System.Windows.Forms.ListBox();
+            this.dog3LastName = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // breedGroupBox
@@ -89,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 166);
+            this.label1.Location = new System.Drawing.Point(298, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 33);
             this.label1.TabIndex = 8;
@@ -99,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(283, 270);
+            this.label2.Location = new System.Drawing.Point(523, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 33);
             this.label2.TabIndex = 9;
@@ -109,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 270);
+            this.label3.Location = new System.Drawing.Point(45, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 33);
             this.label3.TabIndex = 10;
@@ -119,7 +122,7 @@
             // 
             this.firstLbl.AutoSize = true;
             this.firstLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstLbl.Location = new System.Drawing.Point(183, 199);
+            this.firstLbl.Location = new System.Drawing.Point(300, 227);
             this.firstLbl.Name = "firstLbl";
             this.firstLbl.Size = new System.Drawing.Size(0, 22);
             this.firstLbl.TabIndex = 11;
@@ -128,7 +131,7 @@
             // 
             this.thirdLbl.AutoSize = true;
             this.thirdLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdLbl.Location = new System.Drawing.Point(324, 303);
+            this.thirdLbl.Location = new System.Drawing.Point(534, 317);
             this.thirdLbl.Name = "thirdLbl";
             this.thirdLbl.Size = new System.Drawing.Size(0, 22);
             this.thirdLbl.TabIndex = 12;
@@ -137,14 +140,14 @@
             // 
             this.secondLbl.AutoSize = true;
             this.secondLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondLbl.Location = new System.Drawing.Point(47, 303);
+            this.secondLbl.Location = new System.Drawing.Point(65, 303);
             this.secondLbl.Name = "secondLbl";
             this.secondLbl.Size = new System.Drawing.Size(0, 22);
             this.secondLbl.TabIndex = 13;
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(331, 139);
+            this.selectBtn.Location = new System.Drawing.Point(642, 139);
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(100, 23);
             this.selectBtn.TabIndex = 14;
@@ -154,7 +157,7 @@
             // 
             // saveComp
             // 
-            this.saveComp.Location = new System.Drawing.Point(13, 392);
+            this.saveComp.Location = new System.Drawing.Point(145, 397);
             this.saveComp.Name = "saveComp";
             this.saveComp.Size = new System.Drawing.Size(414, 23);
             this.saveComp.TabIndex = 15;
@@ -162,11 +165,38 @@
             this.saveComp.UseVisualStyleBackColor = true;
             this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
             // 
+            // dog1LastName
+            // 
+            this.dog1LastName.FormattingEnabled = true;
+            this.dog1LastName.Location = new System.Drawing.Point(433, 13);
+            this.dog1LastName.Name = "dog1LastName";
+            this.dog1LastName.Size = new System.Drawing.Size(99, 121);
+            this.dog1LastName.TabIndex = 16;
+            // 
+            // dog2LastName
+            // 
+            this.dog2LastName.FormattingEnabled = true;
+            this.dog2LastName.Location = new System.Drawing.Point(538, 12);
+            this.dog2LastName.Name = "dog2LastName";
+            this.dog2LastName.Size = new System.Drawing.Size(99, 121);
+            this.dog2LastName.TabIndex = 17;
+            // 
+            // dog3LastName
+            // 
+            this.dog3LastName.FormattingEnabled = true;
+            this.dog3LastName.Location = new System.Drawing.Point(643, 12);
+            this.dog3LastName.Name = "dog3LastName";
+            this.dog3LastName.Size = new System.Drawing.Size(99, 121);
+            this.dog3LastName.TabIndex = 18;
+            // 
             // CompetitionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 450);
+            this.ClientSize = new System.Drawing.Size(753, 450);
+            this.Controls.Add(this.dog3LastName);
+            this.Controls.Add(this.dog2LastName);
+            this.Controls.Add(this.dog1LastName);
             this.Controls.Add(this.saveComp);
             this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.secondLbl);
@@ -201,5 +231,8 @@
         public System.Windows.Forms.Label secondLbl;
         public System.Windows.Forms.Button selectBtn;
         public System.Windows.Forms.Button saveComp;
+        public System.Windows.Forms.ListBox dog1LastName;
+        public System.Windows.Forms.ListBox dog2LastName;
+        public System.Windows.Forms.ListBox dog3LastName;
     }
 }

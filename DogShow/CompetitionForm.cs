@@ -22,7 +22,17 @@ namespace DogShow
         string first;
         string second;
         string third;
-        
+        string dogOneLastName;
+        string dogTwoLastName;
+        string dogThreeLastName;
+        int dogOneID;
+        int dogTwoID;
+        int dogThreeID;
+        int scoreIDOne;
+        int scoreIDTwo;
+        int scoreIDThree;
+        int breedIndex;
+
 
         public CompetitionForm()
         {
@@ -36,12 +46,12 @@ namespace DogShow
 
         private void selectBreedBtn_Click(object sender, EventArgs e)
         {
-            int breedIndex = breedGroupBox.SelectedIndex;
+            breedIndex = breedGroupBox.SelectedIndex;
             if (breedIndex < 0)
             {
                 return;
             }
-            comp.SelectDoggo(Dog1Box, dog2Box, dog3Box, breedIndex);
+            comp.SelectDoggo(Dog1Box, dog2Box, dog3Box, dog1LastName, dog2LastName, dog3LastName, breedIndex);
         }
 
         private void selectBtn_Click(object sender, EventArgs e)
@@ -49,21 +59,27 @@ namespace DogShow
             dogOne = Dog1Box.SelectedItem.ToString();
             dogTwo = dog2Box.SelectedItem.ToString();
             dogThree = dog3Box.SelectedItem.ToString();
-            dogList = comp.DogPlacements(breedGroupBox, dogOne, dogTwo, dogThree);
+            dogOneLastName = dog1LastName.SelectedItem.ToString();
+            dogTwoLastName = dog2LastName.SelectedItem.ToString();
+            dogThreeLastName = dog3LastName.SelectedItem.ToString();
+            dogOneID = comp.GetDogID(dogOne, dogOneLastName);
+            dogTwoID = comp.GetDogID(dogTwo, dogTwoLastName);
+            dogThreeID = comp.GetDogID(dogThree, dogThreeLastName);
+            scoreIDOne = comp.GetScoreID(dogOneID);
+            scoreIDTwo = comp.GetScoreID(dogTwoID);
+            scoreIDThree = comp.GetScoreID(dogThreeID);
+            dogList = comp.DogPlacements(breedGroupBox, scoreIDOne, scoreIDTwo, scoreIDThree);
             first = dogList.ElementAt(0);
             second = dogList.ElementAt(1);
             third = dogList.ElementAt(2);
             firstLbl.Text = first;
             secondLbl.Text = second;
             thirdLbl.Text = third;
-
         }
 
         private void saveComp_Click(object sender, EventArgs e)
         {
-            comp.GetEventID(first, second, third);
-            comp.GetDogID(first, second, third);
-            comp.GetScoreID(first, second, third);
+            comp.OrderDogIds(breedIndex, dogOneID, dogTwoID, dogThreeID);
             comp.InsertDoggo();
         }
     }

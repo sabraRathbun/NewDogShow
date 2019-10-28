@@ -16,6 +16,8 @@ namespace DogShow
     public partial class JudgementPage : Form
     {
         List<DogBreed> nameList = new List<DogBreed>();
+        List<string> lastNames = new List<string>();
+
         Judgement judge = new Judgement();
     
         int dogID;
@@ -34,13 +36,21 @@ namespace DogShow
                 competitorsBox.Items.Add(dog.DogName);
 
             }
+            lastNames = judge.GetLastNames();
+            for(int i = 0; i < lastNames.Count; i++)
+            {
+                string last = lastNames.ElementAt(i);
+                lastNameBox.Items.Add(last);
+            }
+
 
         }
 
         private void selectDogBtn_Click(object sender, EventArgs e)
         {
             string dogName = competitorsBox.Text;
-            dogID = judge.GetDogID(dogName);
+            string dogLastName = lastNameBox.Text;
+            dogID = judge.GetDogID(dogName, dogLastName);
             sizePointTxt.Enabled = true;
             eyePointTxt.Enabled = true;
             furColorPointTxt.Enabled = true;
@@ -55,10 +65,10 @@ namespace DogShow
             int furLengthScore = Int32.Parse(furLengthPointTxt.Text);
             int totalScore = (furLengthScore + furColorScore + eyeScore + sizeScore);
             totalPointsLbl.Text = totalScore.ToString();
-            int eventId = Int32.Parse(eventNumTxt.Text);
+            int eventNum = Int32.Parse(eventNumTxt.Text);
             judge.InsertScores(totalScore, sizeScore, eyeScore, furColorScore, furLengthScore, dogID);
             int locationID = Int32.Parse(locationIdTxt.Text);
-            judge.InsertEvent(locationID, dogID);
+            judge.InsertEvent(locationID, eventNum, dogID);
 
         }
     }

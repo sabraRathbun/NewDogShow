@@ -31,9 +31,9 @@ namespace Service_DogShow
             BreedId = pull.BreedNum(dogName);
             return BreedId;
         }
-        public void InsertDog(int breedId, string name, string gender)
+        public void InsertDog(int breedId, string name, string lastName, string gender)
         {
-            pull.InsertDoggo(breedId, name, gender);
+            pull.InsertDoggo(breedId, name, lastName, gender);
         }
     }
 }

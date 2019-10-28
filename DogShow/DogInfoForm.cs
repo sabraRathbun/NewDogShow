@@ -27,6 +27,7 @@ namespace DogShow
     {
         DogInfo info = new DogInfo();
         public String firstName = "";
+        public string lastName = "";
         public String gender = "";
         public int breedID;
         private Image outline = Properties.Resources.pawOutlineNew;
@@ -63,6 +64,7 @@ namespace DogShow
             EyeColorPanel.Enabled = false;
             FurPanel.Enabled = false;
             FirstNameTxt.Text = "";
+            dogLastNameTxtBox.Text = "";
             genderPanel.Enabled = false;
             ViewBtn.Enabled = true;
         }
@@ -86,6 +88,7 @@ namespace DogShow
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             firstName = FirstNameTxt.Text;
+            lastName = dogLastNameTxtBox.Text;
             if (femRad.Checked)
             {
                 gender = "Female";
@@ -95,7 +98,7 @@ namespace DogShow
                 gender = "Male";
             }
 
-            info.InsertDog(breedID, firstName, gender);
+            info.InsertDog(breedID, firstName, lastName, gender);
 
         }
 

@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.locationIdTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lastNameBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // sizePointTxt
@@ -137,12 +138,12 @@
             this.competitorsBox.FormattingEnabled = true;
             this.competitorsBox.Location = new System.Drawing.Point(13, 12);
             this.competitorsBox.Name = "competitorsBox";
-            this.competitorsBox.Size = new System.Drawing.Size(120, 95);
+            this.competitorsBox.Size = new System.Drawing.Size(100, 95);
             this.competitorsBox.TabIndex = 11;
             // 
             // selectDogBtn
             // 
-            this.selectDogBtn.Location = new System.Drawing.Point(139, 12);
+            this.selectDogBtn.Location = new System.Drawing.Point(221, 12);
             this.selectDogBtn.Name = "selectDogBtn";
             this.selectDogBtn.Size = new System.Drawing.Size(75, 23);
             this.selectDogBtn.TabIndex = 13;
@@ -162,7 +163,7 @@
             // 
             // eventNumTxt
             // 
-            this.eventNumTxt.Location = new System.Drawing.Point(139, 41);
+            this.eventNumTxt.Location = new System.Drawing.Point(221, 46);
             this.eventNumTxt.Name = "eventNumTxt";
             this.eventNumTxt.Size = new System.Drawing.Size(75, 20);
             this.eventNumTxt.TabIndex = 15;
@@ -170,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 47);
+            this.label6.Location = new System.Drawing.Point(302, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 16;
@@ -178,7 +179,7 @@
             // 
             // locationIdTxt
             // 
-            this.locationIdTxt.Location = new System.Drawing.Point(140, 68);
+            this.locationIdTxt.Location = new System.Drawing.Point(222, 72);
             this.locationIdTxt.Name = "locationIdTxt";
             this.locationIdTxt.Size = new System.Drawing.Size(74, 20);
             this.locationIdTxt.TabIndex = 17;
@@ -186,17 +187,26 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(224, 74);
+            this.label7.Location = new System.Drawing.Point(302, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Location ID";
             // 
+            // lastNameBox
+            // 
+            this.lastNameBox.FormattingEnabled = true;
+            this.lastNameBox.Location = new System.Drawing.Point(119, 12);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(100, 95);
+            this.lastNameBox.TabIndex = 19;
+            // 
             // JudgementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 422);
+            this.ClientSize = new System.Drawing.Size(444, 422);
+            this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.locationIdTxt);
             this.Controls.Add(this.label6);
@@ -239,5 +249,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox locationIdTxt;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox lastNameBox;
     }
 }

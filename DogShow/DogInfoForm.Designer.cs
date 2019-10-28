@@ -91,6 +91,8 @@
             this.malePicBox = new System.Windows.Forms.PictureBox();
             this.maleRad = new System.Windows.Forms.RadioButton();
             this.femRad = new System.Windows.Forms.RadioButton();
+            this.dogLastNameTxtBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SizePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraLargePicBox)).BeginInit();
@@ -149,7 +151,7 @@
             this.SizePanel.Controls.Add(this.smallRad);
             this.SizePanel.Controls.Add(this.toyRad);
             this.SizePanel.Enabled = false;
-            this.SizePanel.Location = new System.Drawing.Point(13, 107);
+            this.SizePanel.Location = new System.Drawing.Point(13, 166);
             this.SizePanel.Name = "SizePanel";
             this.SizePanel.Size = new System.Drawing.Size(187, 84);
             this.SizePanel.TabIndex = 11;
@@ -267,7 +269,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 91);
+            this.label4.Location = new System.Drawing.Point(13, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 12;
@@ -280,7 +282,7 @@
             this.FurLengthPanel.Controls.Add(this.longRad);
             this.FurLengthPanel.Controls.Add(this.shortRad);
             this.FurLengthPanel.Enabled = false;
-            this.FurLengthPanel.Location = new System.Drawing.Point(12, 219);
+            this.FurLengthPanel.Location = new System.Drawing.Point(12, 269);
             this.FurLengthPanel.Name = "FurLengthPanel";
             this.FurLengthPanel.Size = new System.Drawing.Size(153, 23);
             this.FurLengthPanel.TabIndex = 13;
@@ -299,7 +301,7 @@
             // shortPicBox
             // 
             this.shortPicBox.Image = global::DogShow.Properties.Resources.pawOutlineNew;
-            this.shortPicBox.Location = new System.Drawing.Point(4, 0);
+            this.shortPicBox.Location = new System.Drawing.Point(4, 3);
             this.shortPicBox.Name = "shortPicBox";
             this.shortPicBox.Size = new System.Drawing.Size(25, 20);
             this.shortPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +334,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 206);
+            this.label5.Location = new System.Drawing.Point(12, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 14;
@@ -386,7 +388,7 @@
             this.FurPanel.Controls.Add(this.tanFurRad);
             this.FurPanel.Controls.Add(this.whiteFurRad);
             this.FurPanel.Enabled = false;
-            this.FurPanel.Location = new System.Drawing.Point(12, 273);
+            this.FurPanel.Location = new System.Drawing.Point(12, 311);
             this.FurPanel.Name = "FurPanel";
             this.FurPanel.Size = new System.Drawing.Size(279, 71);
             this.FurPanel.TabIndex = 18;
@@ -592,7 +594,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 257);
+            this.label3.Location = new System.Drawing.Point(10, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 19;
@@ -609,7 +611,7 @@
             this.EyeColorPanel.Controls.Add(this.brownEyeRad);
             this.EyeColorPanel.Controls.Add(this.hazelEyeRad);
             this.EyeColorPanel.Enabled = false;
-            this.EyeColorPanel.Location = new System.Drawing.Point(13, 377);
+            this.EyeColorPanel.Location = new System.Drawing.Point(12, 411);
             this.EyeColorPanel.Name = "EyeColorPanel";
             this.EyeColorPanel.Size = new System.Drawing.Size(187, 51);
             this.EyeColorPanel.TabIndex = 20;
@@ -705,7 +707,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 364);
+            this.label6.Location = new System.Drawing.Point(12, 385);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 21;
@@ -731,7 +733,7 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.Location = new System.Drawing.Point(357, 400);
+            this.ClearBtn.Location = new System.Drawing.Point(359, 439);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(94, 23);
             this.ClearBtn.TabIndex = 24;
@@ -742,7 +744,7 @@
             // SaveBtn
             // 
             this.SaveBtn.Enabled = false;
-            this.SaveBtn.Location = new System.Drawing.Point(257, 400);
+            this.SaveBtn.Location = new System.Drawing.Point(259, 439);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(94, 23);
             this.SaveBtn.TabIndex = 25;
@@ -769,7 +771,7 @@
             this.genderPanel.Controls.Add(this.maleRad);
             this.genderPanel.Controls.Add(this.femRad);
             this.genderPanel.Enabled = false;
-            this.genderPanel.Location = new System.Drawing.Point(12, 54);
+            this.genderPanel.Location = new System.Drawing.Point(12, 121);
             this.genderPanel.Name = "genderPanel";
             this.genderPanel.Size = new System.Drawing.Size(188, 26);
             this.genderPanel.TabIndex = 27;
@@ -818,11 +820,29 @@
             this.femRad.Text = "Female";
             this.femRad.UseVisualStyleBackColor = true;
             // 
+            // dogLastNameTxtBox
+            // 
+            this.dogLastNameTxtBox.Location = new System.Drawing.Point(13, 66);
+            this.dogLastNameTxtBox.Name = "dogLastNameTxtBox";
+            this.dogLastNameTxtBox.Size = new System.Drawing.Size(187, 20);
+            this.dogLastNameTxtBox.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Dog\'s Last Name";
+            // 
             // DogInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 435);
+            this.ClientSize = new System.Drawing.Size(463, 474);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dogLastNameTxtBox);
             this.Controls.Add(this.genderPanel);
             this.Controls.Add(this.ChooseBreedBtn);
             this.Controls.Add(this.SaveBtn);
@@ -946,6 +966,8 @@
         private System.Windows.Forms.PictureBox hazelPicBox;
         private System.Windows.Forms.PictureBox brownEyePicBox;
         private System.Windows.Forms.PictureBox malePicBox;
+        private System.Windows.Forms.TextBox dogLastNameTxtBox;
+        private System.Windows.Forms.Label label8;
     }
 }
 
