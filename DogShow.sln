@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_DogShow", "Service_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess_DogShow", "DataAccess_DogShow\DataAccess_DogShow.csproj", "{A2FA0C13-A6B4-49A8-9F25-39CB9DEF298E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A657CCD0-2013-48A4-8AA0-7F0C46D25E22}"
+	ProjectSection(SolutionItems) = preProject
+		sql.txt = sql.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

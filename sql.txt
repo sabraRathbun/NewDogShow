@@ -1,0 +1,360 @@
+CREATE TABLE Breeds (
+BreedID int NOT NULL AUTO_INCREMENT,
+Description varchar(100),
+PRIMARY KEY (BreedID)
+);
+
+
+
+CREATE TABLE Scores (
+CompetitionID int,
+ScoreID int,
+Size int,
+EyeColor int,
+FurColor int
+);
+
+CREATE TABLE Dog (
+DogID int NOT NULL AUTO_INCREMENT,
+BreedID int,
+DogName varchar(100),
+DogGender varchar(5),
+PRIMARY KEY (DogID),
+FOREIGN KEY (BreedID) REFERENCES Breeds(BreedID)
+);
+CREATE TABLE Events_Table (
+EventID int NOT NULL AUTO_INCREMENT,
+Location varchar(100),
+PRIMARY KEY (EventID)
+);
+
+CREATE TABLE Competitions (
+CompetitionID int NOT NULL AUTO_INCREMENT,
+EventID int,
+Placement int,
+DogID int,
+ScoreID int,
+PRIMARY KEY (CompetitionID),
+FOREIGN KEY (EventID) REFERENCES Events_Table(EventID),
+FOREIGN KEY (DogID) REFERENCES Dog(DogID),
+FOREIGN KEY (ScoreID) REFERENCES Scores(ScoreID)
+);
+
+ALTER TABLE Scores ADD PRIMARY KEY (ScoreID);
+ALTER TABLE Scores ADD FOREIGN KEY (CompetitionID) REFERENCES Competitions(CompetitionID);
+ALTER TABLE Scores ADD COLUMN FurLength int;
+
+
+INSERT INTO Breeds (Description)
+VALUES 
+('Airedale Terrier'),
+('American Hairless Terrier'),
+('American Staffordshire Terrier'),
+('Australiam Terrier'),
+('Bedlington Terrier'),
+('Border Terrier'),
+('Bull Terrier'),
+('Cairn Terrier'),
+('Cesky Terrier'),
+('Dandie Dinmont Terrier'),
+('Glen of Imaal Terrier'),
+('Irish Terrier'),
+('Kerry Blue Terrier'),
+('Lakeland Terrier'),
+('Manchester Terrier'),
+('Miniature Bull Terrier'),
+('Norfolk Terrier'),
+('Norwich Terrier'),
+('Parson Russell Terrier'),
+('Rat Terrier'),
+('Russell Terrier'),
+('Scottish Terrier'),
+('Sealyham Terrier'),
+('Skye Terrier'),
+('Smooth Fox Terrier'),
+('Soft Coated Wheaten Terrier'),
+('Staffordshire Bull Terrier'),
+('Welsh Terrier'),
+('West Highland White Terrier'),
+('Wire Fox Terrier'),
+('American Water Spaniel'),
+('Boykin Spaniel'),
+('Brittany'),
+('Chesapeake Bay Retriever'),
+('Clumber Spaniel'),
+('Cocker Spaniel'),
+('Curly-Coated Retriever'),
+('English Cocker Spaniel'),
+('English Setter'),
+('English Springer Spaniel'),
+('Field Spaniel'),
+('Flat-Coated Retriever'),
+('German Shorthaired Pointer'),
+('German Wirehaired Pointer'),
+('Golden Retriever'),
+('Gordon Setter'),
+('Irish Red and White Setter'),
+('Irish Setter'),
+('Irish Water Spaniel'),
+('Labrador Retriever'),
+('Lagotto Romagnolo'),
+('Nederlandse Kooikerhondje'),
+('Nova Scotia Duck Tolling Retriever'),
+('Pointer'),
+('Spinone Italiano'),
+('Sussex Spaniel'),
+('Vizsla'),
+('Weimarner'),
+('Welsh Springer Spaniel'),
+('Wirehaired Pointing Griffon'),
+('Wirehaired Vizsla'),
+('Afghan Hound'),
+('American English Coonhound'),
+('American Foxhound'),
+('Azwakh'),
+('Basenji'),
+('Basset Hound'),
+('Beagle'),
+('Black and Tan Coonhound'),
+('Bloodhound'),
+('Bluetick Coonhound'),
+('Borzoi'),
+('Cirneco Dell Etna'),
+('Dachshund'),
+('English Foxhound'),
+('Grand Basset Griffon Vendeen'),
+('Greyhound'),
+('Harrier'),
+('Ibizan Hound'),
+('Irish Wolfhound'),
+('Norwegian Elkhound'),
+('Otterhound'),
+('Petit Basset Groffon Vendeen'),
+('Pharaoh Hound'),
+('Plott'),
+('Portugese Podengo Pequeno'),
+('Redbone Coonhound'),
+('Rhodesian Ridgeback'),
+('Saluki'),
+('Scottish Deerhound'),
+('Sloughi'),
+('Treeing Walker Coonhound'),
+('Whippet'),
+('American Eskimo Dog'),
+('Bichon Frise'),
+('Boston Terrier'),
+('Bulldog'),
+('Chinese Shar-Pei'),
+('Chow Chow'),
+('Coton De Tulear'),
+('Dalmatian'),
+('Finish Spitz'),
+('French Bulldog'),
+('Keeshond'),
+('Lhasa Apso'),
+('Lowchen'),
+('Norwegian Lundhund'),
+('Poodle'),
+('Schipperke'),
+('Shiba Inu'),
+('Tibetan Spaniel'),
+('Tibetan Terrier'),
+('Xoloitzcuintli'),
+('Akita'),
+('Alaskan Malamute'),
+('Anatolian Shepherd Dog'),
+('Bernese Mountain Dog'),
+('Black Russian Terrier'),
+('Boerboel'),
+('Boxer'),
+('Bullmastiff'),
+('Cane Corso'),
+('Chinook'),
+('Doberman Pinscher'),
+('Dogue de Bordeaux'),
+('German Pinscher'),
+('Giant Schnauzer'),
+('Great Dane'),
+('Great Pyrenees'),
+('Greater Swiss Mountain Dog'),
+('Komondor'),
+('Kuvasz'),
+('Leonberger'),
+('Mastiff'),
+('Neapolitan Mastiff'),
+('Newfoundland'),
+('Portuguese Water Dog'),
+('Rottweiler'),
+('Samoyed'),
+('Siberian Husky'),
+('Standard Schnauzer'),
+('Tibetan Mastiff'),
+('St. Bernard'),
+('Australian Cattle Dog'),
+('Australian Shepherd'),
+('Bearded Collie'),
+('Beauceron'),
+('Belgian Malinois'),
+('Belgian Sheepdog'),
+('Belgian Tervuren'),
+('Bergamasco'),
+('Berger Picard'),
+('Border Collie'),
+('Bouvier des Flandres'),
+('Briard'),
+('Canaan Dog'),
+('Cardigan Welsh Corgi'),
+('Collie'),
+('Entlebucher Mountain Dog'),
+('Finnish Lapphund'),
+('German Shephard Dog'),
+('Icelandic Sheepdog'),
+('Miniature American Shepherd'),
+('Norwegian Buhund'),
+('Old English Sheepdog'),
+('Pembroke Welsh Corgi'),
+('Polish Lowland Sheepdog'),
+('Puli'),
+('Pumi'),
+('Pyrenean Shepherd'),
+('Shetland Sheepdog'),
+('Spanish Water Dog'),
+('Swedish Vallhund'),
+('Affenpinscher'),
+('Brussels Griffon'),
+('Cavalier King Charles Spaniel'),
+('Chihuahua'),
+('Chinese Crested'),
+('English Toy Spaniel'),
+('Havanese'),
+('Italian Greyhound'),
+('Japanese Chin'),
+('Maltese'),
+('Manchester Terrier'),
+('Miniature Pinscher'),
+('Papillon'),
+('Pekingese'),
+('Pomeranian'),
+('Poodle (Toy)'),
+('Pug'),
+('Shih Tzu'),
+('Silky Terrier'),
+('Toy Fox Terrier'),
+('Yorkshire Terrier'),
+('Barbet'),
+('Belgian Laekenois'),
+('Dogo Argentino'),
+('Dutch Shepherd'),
+('Lancashire Heeler'),
+('Mudi'),
+('Norrbottenspets'),
+('Peruvian Inca Orchid'),
+('Portuguese Podengo'),
+('Russian Toy')
+;
+
+        
+INSERT INTO Dog (BreedID, DogName, DogGender)
+	VALUES (115, 'Hank', 'Male');
+        
+ALTER TABLE Dog MODIFY COLUMN DogGender VARCHAR(10);
+        
+INSERT INTO Dog (BreedID, DogName, DogGender)
+	VALUES (140, 'Snowball', 'Female');
+    
+ALTER TABLE Breeds MODIFY COLUMN ClassID int NOT NULL;
+
+UPDATE Breeds SET ClassID = 0 WHERE BreedID >= 0;
+
+UPDATE Breeds SET ClassID = 1 WHERE BreedID >= 31 AND BreedID <= 61;
+
+UPDATE Breeds SET ClassID = 2 WHERE BreedID >= 62 AND BreedID <= 93;
+
+UPDATE Breeds SET ClassID = 3 WHERE BreedID >= 94 AND BreedID <= 113;
+
+UPDATE Breeds SET ClassID = 4 WHERE BreedID >= 114 AND BreedID <= 143;
+
+UPDATE Breeds SET ClassID = 5 WHERE BreedID >= 144 AND BreedID <= 173;
+
+UPDATE Breeds SET ClassID = 6 WHERE BreedID >= 174 AND BreedID <= 194;
+
+UPDATE Breeds SET ClassID = 7 WHERE BreedID >= 195 AND BreedID <= 204;
+
+INSERT INTO Breeds (Description, ClassID)
+	VALUES
+    ('Miniature Schnauzer', 0);
+    
+SELECT b.classID FROM dog as a join breeds as b on a.breedID = b.breedID WHERE a.dogID = 1;
+
+CREATE TABLE judgeLogin (
+username varchar(10),
+userPassword varchar(10)
+);
+
+INSERT INTO judgeLogin (username, userPassword)
+	VALUES
+		('jondoe', 'password'),
+        ('janedoe', 'password12');
+
+SELECT username
+	FROM judgeLogin
+		WHERE username = 'jondoe' AND userPassword = 'password';
+        
+
+ALTER TABLE Events_Table ADD COLUMN eventNum int;
+ALTER TABLE dog ADD COLUMN classID int;
+UPDATE dog SET classID = 4 WHERE dogID = 1;
+
+SELECT * FROM breeds;
+ALTER TABLE dog DROP COLUMN classID;
+
+SELECT * FROM scores where dogId = 6 or dogid = 31 or dogid = 67 order by dogID desc;
+SELECT * FROM Events_table;
+SELECT * FROM competitions;
+ALTER TABLE Events_table ADD COLUMN DogID int;
+SELECT * FROM dog;
+
+SELECT a.dogID, a.DogName, a.DogGender, a.BreedID, b.classID, b.description FROM dog as a join breeds as b on a.breedID = b.breedID;
+ALTER TABLE competitions ADD COLUMN compNum int;
+SHOW CREATE TABLE Events_table;
+ALTER TABLE Events_table DROP FOREIGN KEY events_table_ibfk_1;
+
+ALTER TABLE Events_table DROP COLUMN DogId;
+SELECT a.dogID, a.DogName, a.DogGender, a.BreedID, b.DogID, b.EventID, b.EventNum FROM dog as a join Events_table as b on a.DogID = b.DogID;
+ALTER TABLE Competitions MODIFY competitionID int;
+
+SELECT a.dogName, a.dogID FROM dog as a join breeds as b where a.breedId = b.BreedId AND b.classID = 1;
+ALTER TABLE competitions DROP COLUMN compNum;
+ALTER TABLE competitions MODIFY COLUMN Placement varchar(10);
+
+SELECT a.competitionID from scores as a join dog as b where a.dogid = b.dogid and b.dogname = 'diesel';
+SELECT * from scores order by scoreId desc limit 3;
+
+SELECT a.DogName from dog a join scores as b on a.dogId = b.dogId join breeds as c on a.breedId = c.breedId where c.classID = 4 and b.scoreID = 166 or b.ScoreID = 170 or b.scoreID = 149 order by b.totalScore desc limit 3;
+
+SELECT a.eventID from events_table as a join dog as b where a.dogid = b.dogid and b.dogname = 'diesel';
+SELECT a.ScoreID from scores as a join dog as b where a.dogID = b.DogID and b.Dogname = 'Hank';
+
+ALTER TABLE competitions MODIFY COLUMN competitionID int NOT NULL AUTO_INCREMENT;
+SELECT * FROM dog;
+ALTER TABLE dog ADD COLUMN dogNum int;
+SELECT * FROM breeds WHERE description = 'golden retriever';
+ALTER TABLE scores DROP COLUMN CompetitionID;
+SELECT * FROM breeds WHERE description like ('french bulldog');
+ALTER TABLE scores ADD COLUMN totalScore int;
+ALTER TABLE scores MODIFY COLUMN scoreID int NOT NULL AUTO_INCREMENT;
+ALTER TABLE competitions DROP FOREIGN KEY competitions_ibfk_3;
+ALTER TABLE competitions ADD FOREIGN KEY (scoreID) REFERENCES scores(scoreID);
+ALTER TABLE dog MODIFY COLUMN dogNum int NOT NULL AUTO_INCREMENT;
+
+SELECT a.dogID from dog as a join scores as b on a.dogID = b.dogID where a.dogname = 'hank' AND b.scoreID = 166;
+ALTER TABLE dog DROP COLUMN dogNum;
+ALTER TABLE dog ADD COLUMN dogLastName varchar(50);
+
+select a.dogID from dog a WHERE a.DogName = 'Stella' and a.DogLastName = 'goins';
+SELECT dogID from scores where scoreID = 166;
+SELECT * FROM scores;
+
+SELECT a.dogId from dog a join scores as b on a.dogid = b.dogid join breeds as c on a.breedid = c.breedid where c.classid = 1 and b.scoreid = 155 or b.scoreid = 219 or b.scoreid = 257 order by b.totalscore desc;
+SELECT a.eventid from events_table as a join dog as b where a.dogid = b.dogid and b.dogid = 31;
+SELECT a.dogName, a.dogLastName, c.totalScore from dog a join events_table as b join scores as c on a.dogid = b.dogid where a.dogId = 6 or a.dogId = 31 or a.dogId = 67 order by c.totalScore desc limit 3;
