@@ -11,9 +11,10 @@ namespace Service_DogShow
     public class Competition 
     {
         List<string> dogList = new List<string>();
-        List<string> lastNames = new List<string>();
+        List<string> dogLastNames = new List<string>();
         List<int> dogIds = new List<int>();
         PullSqlData pull = new PullSqlData();
+        string[] dogLast = new string[10000];
         int eventIDOne;
         int eventIDTwo;
         int eventIDThree;
@@ -25,23 +26,24 @@ namespace Service_DogShow
         int scoreIDThree;
 
 
-        public void SelectDoggo(ListBox one, ListBox two, ListBox three, ListBox four, ListBox five, ListBox six, int breedIndex)
+        public void SelectDoggo(ListView dogView, ColumnHeader lastNameColumn, int breedIndex)
         {
             var dogs = pull.RegisteredDogsInClass(breedIndex);
-            one.Items.Clear();
+            dogView.Items.Clear();
             foreach (string dog in dogs)
             {
-                one.Items.Add(dog);
-                two.Items.Add(dog);
-                three.Items.Add(dog);
+                dogList.Add(dog);
+                dogView.Items.Add(dog);
+
             }
+    
             var lastNames = pull.RegisteredDogsLastName(breedIndex);
+
             foreach (string last in lastNames)
             {
-                four.Items.Add(last);
-                five.Items.Add(last);
-                six.Items.Add(last);
+                dogLastNames.Add(last);
             }
+            
         }
 
         public List<string> DogPlacements(ListBox breedGroup, int scoreIDOne, int scoreIDTwo, int scoreIDThree)

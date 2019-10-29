@@ -37,7 +37,7 @@ namespace DataAccess_DogShow
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
-                string sql = "INSERT INTO `Dog` (`BreedID`, `DogName`, `dogLastName`, `DogGender`) VALUES (@0, @1, @2, @4); ";
+                string sql = "INSERT INTO `Dog` (`BreedID`, `DogName`, `dogLastName`, `DogGender`) VALUES (@0, @1, @2, @3); ";
 
                 db.Execute(sql, breedID, name, lastName, gender);
 

@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.breedGroupBox = new System.Windows.Forms.ListBox();
             this.Dog1Box = new System.Windows.Forms.ListBox();
-            this.selectBreedBtn = new System.Windows.Forms.Button();
             this.dog2Box = new System.Windows.Forms.ListBox();
             this.dog3Box = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +42,12 @@
             this.dog1LastName = new System.Windows.Forms.ListBox();
             this.dog2LastName = new System.Windows.Forms.ListBox();
             this.dog3LastName = new System.Windows.Forms.ListBox();
+            this.dogListView = new System.Windows.Forms.ListView();
+            this.firstNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lastNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dogBreedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.classGroupComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // breedGroupBox
-            // 
-            this.breedGroupBox.FormattingEnabled = true;
-            this.breedGroupBox.Location = new System.Drawing.Point(13, 13);
-            this.breedGroupBox.Name = "breedGroupBox";
-            this.breedGroupBox.Size = new System.Drawing.Size(99, 121);
-            this.breedGroupBox.TabIndex = 0;
             // 
             // Dog1Box
             // 
@@ -61,16 +56,6 @@
             this.Dog1Box.Name = "Dog1Box";
             this.Dog1Box.Size = new System.Drawing.Size(99, 121);
             this.Dog1Box.TabIndex = 1;
-            // 
-            // selectBreedBtn
-            // 
-            this.selectBreedBtn.Location = new System.Drawing.Point(13, 141);
-            this.selectBreedBtn.Name = "selectBreedBtn";
-            this.selectBreedBtn.Size = new System.Drawing.Size(99, 23);
-            this.selectBreedBtn.TabIndex = 2;
-            this.selectBreedBtn.Text = "Select Breed";
-            this.selectBreedBtn.UseVisualStyleBackColor = true;
-            this.selectBreedBtn.Click += new System.EventHandler(this.selectBreedBtn_Click);
             // 
             // dog2Box
             // 
@@ -147,13 +132,13 @@
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(642, 139);
+            this.selectBtn.Location = new System.Drawing.Point(642, 595);
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(100, 23);
             this.selectBtn.TabIndex = 14;
-            this.selectBtn.Text = "Select Dogs";
+            this.selectBtn.Text = "Select Dog";
             this.selectBtn.UseVisualStyleBackColor = true;
-            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            this.selectBtn.Click += new System.EventHandler(this.SelectBtn_Click);
             // 
             // saveComp
             // 
@@ -163,7 +148,7 @@
             this.saveComp.TabIndex = 15;
             this.saveComp.Text = "Save Competition";
             this.saveComp.UseVisualStyleBackColor = true;
-            this.saveComp.Click += new System.EventHandler(this.saveComp_Click);
+            this.saveComp.Click += new System.EventHandler(this.SaveComp_Click);
             // 
             // dog1LastName
             // 
@@ -189,11 +174,51 @@
             this.dog3LastName.Size = new System.Drawing.Size(99, 121);
             this.dog3LastName.TabIndex = 18;
             // 
+            // dogListView
+            // 
+            this.dogListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.firstNameColumn,
+            this.lastNameColumn,
+            this.dogBreedColumn});
+            this.dogListView.HideSelection = false;
+            this.dogListView.Location = new System.Drawing.Point(792, 13);
+            this.dogListView.Name = "dogListView";
+            this.dogListView.Size = new System.Drawing.Size(484, 605);
+            this.dogListView.TabIndex = 19;
+            this.dogListView.UseCompatibleStateImageBehavior = false;
+            this.dogListView.View = System.Windows.Forms.View.Details;
+            // 
+            // firstNameColumn
+            // 
+            this.firstNameColumn.Text = "Dog\'s First Name";
+            this.firstNameColumn.Width = 127;
+            // 
+            // lastNameColumn
+            // 
+            this.lastNameColumn.Text = "Dog\'s Last Name";
+            this.lastNameColumn.Width = 192;
+            // 
+            // dogBreedColumn
+            // 
+            this.dogBreedColumn.Text = "Dog\'s Breed";
+            this.dogBreedColumn.Width = 163;
+            // 
+            // classGroupComboBox
+            // 
+            this.classGroupComboBox.FormattingEnabled = true;
+            this.classGroupComboBox.Location = new System.Drawing.Point(13, 175);
+            this.classGroupComboBox.Name = "classGroupComboBox";
+            this.classGroupComboBox.Size = new System.Drawing.Size(121, 21);
+            this.classGroupComboBox.TabIndex = 20;
+            this.classGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.classGroupComboBox_SelectedIndexChanged);
+            // 
             // CompetitionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 450);
+            this.ClientSize = new System.Drawing.Size(1288, 630);
+            this.Controls.Add(this.classGroupComboBox);
+            this.Controls.Add(this.dogListView);
             this.Controls.Add(this.dog3LastName);
             this.Controls.Add(this.dog2LastName);
             this.Controls.Add(this.dog1LastName);
@@ -207,9 +232,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dog3Box);
             this.Controls.Add(this.dog2Box);
-            this.Controls.Add(this.selectBreedBtn);
             this.Controls.Add(this.Dog1Box);
-            this.Controls.Add(this.breedGroupBox);
             this.Name = "CompetitionForm";
             this.Text = "CompetitionForm";
             this.ResumeLayout(false);
@@ -221,9 +244,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ListBox breedGroupBox;
         public System.Windows.Forms.ListBox Dog1Box;
-        public System.Windows.Forms.Button selectBreedBtn;
         public System.Windows.Forms.ListBox dog2Box;
         public System.Windows.Forms.ListBox dog3Box;
         public System.Windows.Forms.Label firstLbl;
@@ -234,5 +255,10 @@
         public System.Windows.Forms.ListBox dog1LastName;
         public System.Windows.Forms.ListBox dog2LastName;
         public System.Windows.Forms.ListBox dog3LastName;
+        private System.Windows.Forms.ListView dogListView;
+        private System.Windows.Forms.ColumnHeader firstNameColumn;
+        private System.Windows.Forms.ColumnHeader lastNameColumn;
+        private System.Windows.Forms.ColumnHeader dogBreedColumn;
+        private System.Windows.Forms.ComboBox classGroupComboBox;
     }
 }
