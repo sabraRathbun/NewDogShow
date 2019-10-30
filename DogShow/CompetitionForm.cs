@@ -16,9 +16,10 @@ namespace DogShow
     {
         Competition comp = new Competition();
         List<string> dogList = new List<string>();
-        //string dogOne;
-        //string dogTwo;
-        //string dogThree;
+        int selectedIndex;
+        string dogOne;
+        string dogTwo;
+        string dogThree;
         //string first;
         //string second;
         //string third;
@@ -45,18 +46,9 @@ namespace DogShow
             }  
         }
 
-        //private void SelectBreedBtn_Click(object sender, EventArgs e)
-        //{
-        //    breedIndex = breedGroupBox.SelectedIndex;
-        //    if (breedIndex < 0)
-        //    {
-        //        return;
-        //    }
-        //    comp.SelectDoggo(Dog1Box, dog2Box, dog3Box, dog1LastName, dog2LastName, dog3LastName, breedIndex);
-        //}
-
         private void SelectBtn_Click(object sender, EventArgs e)
         {
+            
             //dogOne = Dog1Box.SelectedItem.ToString();
             //dogTwo = dog2Box.SelectedItem.ToString();
             //dogThree = dog3Box.SelectedItem.ToString();
@@ -87,7 +79,23 @@ namespace DogShow
         private void classGroupComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             breedIndex = classGroupComboBox.SelectedIndex;
-            comp.SelectDoggo(dogListView, lastNameColumn, breedIndex);
+            comp.SelectDoggo(dogListView, breedIndex);
+
+        }
+
+        private void selectDogTwoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectDogThreeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dogListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

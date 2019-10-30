@@ -169,6 +169,16 @@ namespace DataAccess_DogShow
                 return results;
             }
         }
+        public List<string> GetBreed(int classID)
+        {
+            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
+            {
+                string sql = "select a.`description` from `breeds` as `a` join `dog` as `b` where a.`breedID` = b.`breedId` AND a.`classID` = @0 order by b.dogID; ";
+
+                var results = db.Fetch<string>(sql, classID);
+                return results;
+            }
+        }
 
     }
 }

@@ -358,3 +358,10 @@ SELECT * FROM scores;
 SELECT a.dogId from dog a join scores as b on a.dogid = b.dogid join breeds as c on a.breedid = c.breedid where c.classid = 1 and b.scoreid = 155 or b.scoreid = 219 or b.scoreid = 257 order by b.totalscore desc;
 SELECT a.eventid from events_table as a join dog as b where a.dogid = b.dogid and b.dogid = 31;
 SELECT a.dogName, a.dogLastName, c.totalScore from dog a join events_table as b join scores as c on a.dogid = b.dogid where a.dogId = 6 or a.dogId = 31 or a.dogId = 67 order by c.totalScore desc limit 3;
+
+SELECT a.dogName, a.DogLastName, a.DogId from dog a join competitions as b on b.DogId = a.DogId where b.placement = 1;
+SELECT a.description from breeds as a join dog as b where a.breedid = b.breedid and a.classid = 4 order by b.dogId;
+SELECT a.dogID from dog a WHERE a.dogname = 'frank' and a.doglastname = 'reynolds';
+SELECT a.description from breeds as a join dog as b where  a.BreedID = b.BreedID and b.dogID = 7;
+SELECT classID from breeds where description = 'Dutch Shepherd';
+SELECT * From BREEDS Where classID = 7;

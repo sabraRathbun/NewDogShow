@@ -12,9 +12,9 @@ namespace Service_DogShow
     {
         List<string> dogList = new List<string>();
         List<string> dogLastNames = new List<string>();
+        List<string> dogBreeds = new List<string>();
         List<int> dogIds = new List<int>();
         PullSqlData pull = new PullSqlData();
-        string[] dogLast = new string[10000];
         int eventIDOne;
         int eventIDTwo;
         int eventIDThree;
@@ -26,24 +26,38 @@ namespace Service_DogShow
         int scoreIDThree;
 
 
-        public void SelectDoggo(ListView dogView, ColumnHeader lastNameColumn, int breedIndex)
+        public void SelectDoggo(ListView dogView, int breedIndex)
         {
-            var dogs = pull.RegisteredDogsInClass(breedIndex);
+            dogList.Clear();
+            dogLastNames.Clear();
             dogView.Items.Clear();
+            dogBreeds.Clear();
+            var dogs = pull.RegisteredDogsInClass(breedIndex);
             foreach (string dog in dogs)
             {
                 dogList.Add(dog);
-                dogView.Items.Add(dog);
-
             }
-    
             var lastNames = pull.RegisteredDogsLastName(breedIndex);
 
             foreach (string last in lastNames)
             {
                 dogLastNames.Add(last);
             }
-            
+            var breed = pull.GetBreed(breedIndex);
+            foreach(string breeds in breed)
+            {
+                dogBreeds.Add(breeds);
+            }
+            int i = 0;
+            foreach (string dog in dogList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = dog;
+                item.SubItems.Add(dogLastNames[i]);
+                item.SubItems.Add(dogBreeds[i]);
+                dogView.Items.Add(item);
+                i++;
+            }
         }
 
         public List<string> DogPlacements(ListBox breedGroup, int scoreIDOne, int scoreIDTwo, int scoreIDThree)
