@@ -8,9 +8,12 @@ namespace Common_DogShow
 {
     public class Dog
     {
+        public int DogId { set; get;}
         public string DogName { set; get; }
-        public string DogGender { set; get; }
-        public string DogClass { set; get; }
-        public string DogBreed { set; get; }
+        public string DogLastName { set; get; }
+        public int BreedID { set; get; }
+        public int ClassID { set; get; }
+        public string description { set; get; }
+
     }
 }

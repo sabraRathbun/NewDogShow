@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common_DogShow;
 using DataAccess_DogShow;
 
 namespace Service_DogShow
 {
     public class Competition 
     {
-        List<string> dogList = new List<string>();
-        List<string> dogLastNames = new List<string>();
-        List<string> dogBreeds = new List<string>();
-        List<int> dogIds = new List<int>();
+        List<Dog> dogList = new List<Dog>();
         PullSqlData pull = new PullSqlData();
+        List<string> dummy = new List<string>();
         int eventIDOne;
         int eventIDTwo;
         int eventIDThree;
@@ -25,47 +24,40 @@ namespace Service_DogShow
         int scoreIDTwo;
         int scoreIDThree;
 
-
+        public List<Dog> GetDoggos(int breedIndex)
+        {
+            var dogs = pull.GetDogsForCompetition(breedIndex);
+            dogList = dogs;
+            return dogList;
+        }
         public void SelectDoggo(ListView dogView, int breedIndex)
         {
             dogList.Clear();
-            dogLastNames.Clear();
             dogView.Items.Clear();
-            dogBreeds.Clear();
-            var dogs = pull.RegisteredDogsInClass(breedIndex);
-            foreach (string dog in dogs)
+            var dogs = pull.GetDogsForCompetition(breedIndex);
+            dogList = dogs;
+            for (int i = 0; i < dogList.Count; i++)
             {
-                dogList.Add(dog);
-            }
-            var lastNames = pull.RegisteredDogsLastName(breedIndex);
-
-            foreach (string last in lastNames)
-            {
-                dogLastNames.Add(last);
-            }
-            var breed = pull.GetBreed(breedIndex);
-            foreach(string breeds in breed)
-            {
-                dogBreeds.Add(breeds);
-            }
-            int i = 0;
-            foreach (string dog in dogList)
-            {
+                Dog dog = dogList.ElementAt(i);
                 ListViewItem item = new ListViewItem();
-                item.Text = dog;
-                item.SubItems.Add(dogLastNames[i]);
-                item.SubItems.Add(dogBreeds[i]);
-                dogView.Items.Add(item);
-                i++;
+                item.Text = dog.DogName;
+                item.SubItems.Add(dog.DogLastName);
+                item.SubItems.Add(dog.description);
+                item.Tag = dog.DogId;
+                dogView.Items.Add(item);   
             }
+           
         }
-
+        public void GetSelectedDoggos(ListView dogView)
+        {
+            
+        }
         public List<string> DogPlacements(ListBox breedGroup, int scoreIDOne, int scoreIDTwo, int scoreIDThree)
         {
-            dogList = pull.OrderDogs(breedGroup.SelectedIndex, scoreIDOne, scoreIDTwo, scoreIDThree); 
-            return dogList;
+            dummy = pull.OrderDogs(breedGroup.SelectedIndex, scoreIDOne, scoreIDTwo, scoreIDThree);
+            return dummy;
         }
-        
+
         public void GetEventID(int first, int second, int third)
         {
             eventIDOne = pull.EventID(first);
@@ -86,14 +78,14 @@ namespace Service_DogShow
         }
         public void OrderDogIds(int classId, int idOne, int idTwo, int idThree)
         {
-            dogIds = pull.OrderDogIds(classId, idOne, idTwo, idThree);
-            DogIDOne = dogIds.ElementAt(0);
-            DogIDTwo = dogIds.ElementAt(1);
-            DogIDThree = dogIds.ElementAt(2);
-            GetEventID(DogIDOne, DogIDTwo, DogIDThree);
-            scoreIDOne = GetScoreID(DogIDOne);
-            scoreIDTwo = GetScoreID(DogIDTwo);
-            scoreIDThree = GetScoreID(DogIDThree);
+            //dogIds = pull.OrderDogIds(classId, idOne, idTwo, idThree);
+            //DogIDOne = dogIds.ElementAt(0);
+            //DogIDTwo = dogIds.ElementAt(1);
+            //DogIDThree = dogIds.ElementAt(2);
+            //GetEventID(DogIDOne, DogIDTwo, DogIDThree);
+            //scoreIDOne = GetScoreID(DogIDOne);
+            //scoreIDTwo = GetScoreID(DogIDTwo);
+            //scoreIDThree = GetScoreID(DogIDThree);
         }
 
         public void InsertDoggo()

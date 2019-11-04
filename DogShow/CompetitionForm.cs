@@ -16,7 +16,8 @@ namespace DogShow
     {
         Competition comp = new Competition();
         List<string> dogList = new List<string>();
-        int selectedIndex;
+        List<string> selectedDoggos = new List<string>();
+        string[] selectedDogs = new string[3];
         string dogOne;
         string dogTwo;
         string dogThree;
@@ -26,7 +27,6 @@ namespace DogShow
         //string dogOneLastName;
         //string dogTwoLastName;
         //string dogThreeLastName;
-        string[] doggos = new string[3];
         int dogOneID;
         int dogTwoID;
         int dogThreeID;
@@ -48,7 +48,7 @@ namespace DogShow
 
         private void SelectBtn_Click(object sender, EventArgs e)
         {
-            
+            //selectedDoggos = comp.
             //dogOne = Dog1Box.SelectedItem.ToString();
             //dogTwo = dog2Box.SelectedItem.ToString();
             //dogThree = dog3Box.SelectedItem.ToString();

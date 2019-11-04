@@ -56,6 +56,16 @@ namespace DataAccess_DogShow
                 return results;
             }
         }
+        public List<Dog> GetDogsForCompetition(int ClassID)
+        {
+            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
+            {
+                string sql = "SELECT a.`dogID`, a.`DogName`, a.`DogLastName`, a.`BreedID`, b.`ClassID`, b.`description` FROM `dog` as `a` join `breeds` as `b` on a.`breedID` = b.`breedID` WHERE b.`ClassID` = @0;";
+
+                var results = db.Fetch<Dog>(sql, ClassID);
+                return results;
+            }
+        }
         public List<string> GetDogLastName()
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
@@ -98,13 +108,13 @@ namespace DataAccess_DogShow
 
             }
         }
-        public List<string> RegisteredDogsInClass(int classId)
+        public List<Dog> RegisteredDogsInClass(int classId)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
                 string sql = "select a.`DogName` from `dog` as `a` join `breeds` as `b` where a.`breedID` = b.`breedId` AND b.`classID` = @0; ";
 
-                var results = db.Fetch<string>(sql, classId);
+                var results = db.Fetch<Dog>(sql, classId);
                 return results;
             }
         }
