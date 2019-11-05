@@ -48,7 +48,7 @@ namespace DogShow
 
         private void SelectBtn_Click(object sender, EventArgs e)
         {
-            //selectedDoggos = comp.
+            comp.GetSelectedDoggos(dogListView);
             //dogOne = Dog1Box.SelectedItem.ToString();
             //dogTwo = dog2Box.SelectedItem.ToString();
             //dogThree = dog3Box.SelectedItem.ToString();

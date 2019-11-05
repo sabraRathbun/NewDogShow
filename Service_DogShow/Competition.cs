@@ -50,7 +50,9 @@ namespace Service_DogShow
         }
         public void GetSelectedDoggos(ListView dogView)
         {
-            
+            string dogOne = dogView.SelectedItems[0].Text;
+            string dogTwo = dogView.SelectedItems[1].Text;
+            string dogThree = dogView.SelectedItems[2].Text;
         }
         public List<string> DogPlacements(ListBox breedGroup, int scoreIDOne, int scoreIDTwo, int scoreIDThree)
         {
