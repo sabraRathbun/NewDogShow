@@ -38,14 +38,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.furLengthPointTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.competitorsBox = new System.Windows.Forms.ListBox();
             this.selectDogBtn = new System.Windows.Forms.Button();
             this.submitBtn = new System.Windows.Forms.Button();
             this.eventNumTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.locationIdTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lastNameBox = new System.Windows.Forms.ListBox();
+            this.classGroupComboBox = new System.Windows.Forms.ComboBox();
+            this.dogView = new System.Windows.Forms.ListView();
+            this.dogsFirstNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dogsLastNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dogsBreedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // sizePointTxt
@@ -133,19 +136,11 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Fur Length Point Value";
             // 
-            // competitorsBox
-            // 
-            this.competitorsBox.FormattingEnabled = true;
-            this.competitorsBox.Location = new System.Drawing.Point(13, 12);
-            this.competitorsBox.Name = "competitorsBox";
-            this.competitorsBox.Size = new System.Drawing.Size(100, 95);
-            this.competitorsBox.TabIndex = 11;
-            // 
             // selectDogBtn
             // 
-            this.selectDogBtn.Location = new System.Drawing.Point(221, 12);
+            this.selectDogBtn.Location = new System.Drawing.Point(11, 64);
             this.selectDogBtn.Name = "selectDogBtn";
-            this.selectDogBtn.Size = new System.Drawing.Size(75, 23);
+            this.selectDogBtn.Size = new System.Drawing.Size(215, 23);
             this.selectDogBtn.TabIndex = 13;
             this.selectDogBtn.Text = "Select Dog";
             this.selectDogBtn.UseVisualStyleBackColor = true;
@@ -163,7 +158,7 @@
             // 
             // eventNumTxt
             // 
-            this.eventNumTxt.Location = new System.Drawing.Point(221, 46);
+            this.eventNumTxt.Location = new System.Drawing.Point(12, 12);
             this.eventNumTxt.Name = "eventNumTxt";
             this.eventNumTxt.Size = new System.Drawing.Size(75, 20);
             this.eventNumTxt.TabIndex = 15;
@@ -171,7 +166,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(302, 53);
+            this.label6.Location = new System.Drawing.Point(93, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 16;
@@ -179,7 +174,7 @@
             // 
             // locationIdTxt
             // 
-            this.locationIdTxt.Location = new System.Drawing.Point(222, 72);
+            this.locationIdTxt.Location = new System.Drawing.Point(12, 38);
             this.locationIdTxt.Name = "locationIdTxt";
             this.locationIdTxt.Size = new System.Drawing.Size(74, 20);
             this.locationIdTxt.TabIndex = 17;
@@ -187,33 +182,62 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(302, 75);
+            this.label7.Location = new System.Drawing.Point(93, 45);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Location ID";
             // 
-            // lastNameBox
+            // classGroupComboBox
             // 
-            this.lastNameBox.FormattingEnabled = true;
-            this.lastNameBox.Location = new System.Drawing.Point(119, 12);
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(100, 95);
-            this.lastNameBox.TabIndex = 19;
+            this.classGroupComboBox.FormattingEnabled = true;
+            this.classGroupComboBox.Location = new System.Drawing.Point(223, 11);
+            this.classGroupComboBox.Name = "classGroupComboBox";
+            this.classGroupComboBox.Size = new System.Drawing.Size(121, 21);
+            this.classGroupComboBox.TabIndex = 19;
+            this.classGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.breedGroupComboBox_SelectedIndexChanged);
+            // 
+            // dogView
+            // 
+            this.dogView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.dogsFirstNameColumn,
+            this.dogsLastNameColumn,
+            this.dogsBreedColumn});
+            this.dogView.GridLines = true;
+            this.dogView.HideSelection = false;
+            this.dogView.Location = new System.Drawing.Point(364, 19);
+            this.dogView.MultiSelect = false;
+            this.dogView.Name = "dogView";
+            this.dogView.Size = new System.Drawing.Size(397, 319);
+            this.dogView.TabIndex = 20;
+            this.dogView.UseCompatibleStateImageBehavior = false;
+            this.dogView.View = System.Windows.Forms.View.Details;
+            // 
+            // dogsFirstNameColumn
+            // 
+            this.dogsFirstNameColumn.Text = "Dog\'s First Name";
+            // 
+            // dogsLastNameColumn
+            // 
+            this.dogsLastNameColumn.Text = "Dog\'s Last Name";
+            // 
+            // dogsBreedColumn
+            // 
+            this.dogsBreedColumn.Text = "Dog\'s Breed";
             // 
             // JudgementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 422);
-            this.Controls.Add(this.lastNameBox);
+            this.ClientSize = new System.Drawing.Size(773, 422);
+            this.Controls.Add(this.dogView);
+            this.Controls.Add(this.classGroupComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.locationIdTxt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.eventNumTxt);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.selectDogBtn);
-            this.Controls.Add(this.competitorsBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.furLengthPointTxt);
             this.Controls.Add(this.label4);
@@ -224,6 +248,7 @@
             this.Controls.Add(this.furColorPointTxt);
             this.Controls.Add(this.eyePointTxt);
             this.Controls.Add(this.sizePointTxt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "JudgementPage";
             this.Text = "Judgement";
             this.ResumeLayout(false);
@@ -242,13 +267,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox furLengthPointTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox competitorsBox;
         private System.Windows.Forms.Button selectDogBtn;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.TextBox eventNumTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox locationIdTxt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox lastNameBox;
+        private System.Windows.Forms.ComboBox classGroupComboBox;
+        private System.Windows.Forms.ListView dogView;
+        private System.Windows.Forms.ColumnHeader dogsFirstNameColumn;
+        private System.Windows.Forms.ColumnHeader dogsLastNameColumn;
+        private System.Windows.Forms.ColumnHeader dogsBreedColumn;
     }
 }

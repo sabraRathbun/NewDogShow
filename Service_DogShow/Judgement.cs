@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Service_DogShow
 {
     public class Judgement
     {
         public List<DogBreed> firstNameList = new List<DogBreed>();
+        public List<Dog> dogList = new List<Dog>();
         public List<string> lastNames = new List<string>();
-
         PullSqlData pull = new PullSqlData();
         int dogId;
+        int eventNum;
+        int locationID;
         
         public List<DogBreed> GetDogBreedList()
         {
@@ -39,6 +42,24 @@ namespace Service_DogShow
         public void InsertEvent(int locationID, int EventID, int dogID)
         {
             pull.InsertEvent(locationID, EventID, dogID);
+        }
+        public void SelectDoggo(ListView dogView, int breedIndex)
+        {
+            dogList.Clear();
+            dogView.Items.Clear();
+            var dogs = pull.GetDogsForJudgement(breedIndex);
+            dogList = dogs;
+            for (int i = 0; i < dogList.Count; i++)
+            {
+                Dog dog = dogList.ElementAt(i);
+                ListViewItem item = new ListViewItem();
+                item.Text = dog.DogName;
+                item.SubItems.Add(dog.DogLastName);
+                item.SubItems.Add(dog.description);
+                item.Tag = dog.DogId;
+                dogView.Items.Add(item);
+            }
+
         }
     }
 }

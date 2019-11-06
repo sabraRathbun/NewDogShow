@@ -56,13 +56,23 @@ namespace DataAccess_DogShow
                 return results;
             }
         }
-        public List<Dog> GetDogsForCompetition(int ClassID)
+        public List<Dog> GetDogsForCompetition(int ClassID, int eventNum, int locationId)
+        {
+            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
+            {
+                string sql = "SELECT a.`dogID`, a.`DogName`, a.`DogLastName`, a.`BreedID`, b.`ClassID`, b.`description` FROM `dog` as `a` join `breeds` as `b` on a.`breedID` = b.`breedID` join `events_table` as c on a.`dogId` = c.`dogId` WHERE b.`ClassID` = @0 AND c.`eventNum` = @1 AND c.`location` = @2;";
+
+                var results = db.Fetch<Dog>(sql, ClassID, eventNum, locationId);
+                return results;
+            }
+        }
+        public List<Dog> GetDogsForJudgement(int classId)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
                 string sql = "SELECT a.`dogID`, a.`DogName`, a.`DogLastName`, a.`BreedID`, b.`ClassID`, b.`description` FROM `dog` as `a` join `breeds` as `b` on a.`breedID` = b.`breedID` WHERE b.`ClassID` = @0;";
 
-                var results = db.Fetch<Dog>(sql, ClassID);
+                var results = db.Fetch<Dog>(sql, classId);
                 return results;
             }
         }
@@ -108,26 +118,7 @@ namespace DataAccess_DogShow
 
             }
         }
-        public List<Dog> RegisteredDogsInClass(int classId)
-        {
-            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
-            {
-                string sql = "select a.`DogName` from `dog` as `a` join `breeds` as `b` where a.`breedID` = b.`breedId` AND b.`classID` = @0; ";
 
-                var results = db.Fetch<Dog>(sql, classId);
-                return results;
-            }
-        }
-        public List<string> RegisteredDogsLastName(int classID)
-        {
-            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
-            {
-                string sql = "select a.`DogLastName` from `dog` as `a` join `breeds` as `b` where a.`breedID` = b.`breedId` AND b.`classID` = @0; ";
-
-                var results = db.Fetch<string>(sql, classID);
-                return results;
-            }
-        }
         public List<string> OrderDogs(int classID, int scoreIDOne, int scoreIDTwo, int scoreIDThree)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
@@ -169,7 +160,7 @@ namespace DataAccess_DogShow
 
             }
         }
-        public List<int> OrderDogIds(int classId, int idOne, int idTwo, int idThree)
+        public List<int> OrderDogIds(int classId, int idOne, int idTwo, int idThree, int eventNum, int locationId)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
@@ -179,16 +170,5 @@ namespace DataAccess_DogShow
                 return results;
             }
         }
-        public List<string> GetBreed(int classID)
-        {
-            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
-            {
-                string sql = "select a.`description` from `breeds` as `a` join `dog` as `b` where a.`breedID` = b.`breedId` AND a.`classID` = @0 order by b.dogID; ";
-
-                var results = db.Fetch<string>(sql, classID);
-                return results;
-            }
-        }
-
     }
 }

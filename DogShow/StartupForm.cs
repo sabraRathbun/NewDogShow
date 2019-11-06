@@ -43,5 +43,11 @@ namespace DogShow
             CompetitionForm comp = new CompetitionForm();
             comp.ShowDialog();
         }
+
+        private void pastCompBtn_Click(object sender, EventArgs e)
+        {
+            PastCompetitions pastComp = new PastCompetitions();
+            pastComp.ShowDialog();
+        }
     }
 }

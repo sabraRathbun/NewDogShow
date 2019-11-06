@@ -41,8 +41,10 @@
             this.lastNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dogBreedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.classGroupComboBox = new System.Windows.Forms.ComboBox();
-            this.selectDogThreeBtn = new System.Windows.Forms.Button();
-            this.selectDogTwoBtn = new System.Windows.Forms.Button();
+            this.EventNumTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LocationIDTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +110,7 @@
             this.selectDogOneBtn.Name = "selectDogOneBtn";
             this.selectDogOneBtn.Size = new System.Drawing.Size(100, 23);
             this.selectDogOneBtn.TabIndex = 14;
-            this.selectDogOneBtn.Text = "Select Dog One";
+            this.selectDogOneBtn.Text = "Select Doggos";
             this.selectDogOneBtn.UseVisualStyleBackColor = true;
             this.selectDogOneBtn.Click += new System.EventHandler(this.SelectBtn_Click);
             // 
@@ -135,7 +137,6 @@
             this.dogListView.TabIndex = 19;
             this.dogListView.UseCompatibleStateImageBehavior = false;
             this.dogListView.View = System.Windows.Forms.View.Details;
-            this.dogListView.SelectedIndexChanged += new System.EventHandler(this.dogListView_SelectedIndexChanged);
             // 
             // firstNameColumn
             // 
@@ -161,33 +162,47 @@
             this.classGroupComboBox.TabIndex = 20;
             this.classGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.classGroupComboBox_SelectedIndexChanged);
             // 
-            // selectDogThreeBtn
+            // EventNumTxt
             // 
-            this.selectDogThreeBtn.Location = new System.Drawing.Point(409, 71);
-            this.selectDogThreeBtn.Name = "selectDogThreeBtn";
-            this.selectDogThreeBtn.Size = new System.Drawing.Size(100, 23);
-            this.selectDogThreeBtn.TabIndex = 21;
-            this.selectDogThreeBtn.Text = "Select Dog Three";
-            this.selectDogThreeBtn.UseVisualStyleBackColor = true;
-            this.selectDogThreeBtn.Click += new System.EventHandler(this.selectDogThreeBtn_Click);
+            this.EventNumTxt.Location = new System.Drawing.Point(13, 40);
+            this.EventNumTxt.Name = "EventNumTxt";
+            this.EventNumTxt.Size = new System.Drawing.Size(201, 20);
+            this.EventNumTxt.TabIndex = 21;
             // 
-            // selectDogTwoBtn
+            // label4
             // 
-            this.selectDogTwoBtn.Location = new System.Drawing.Point(409, 41);
-            this.selectDogTwoBtn.Name = "selectDogTwoBtn";
-            this.selectDogTwoBtn.Size = new System.Drawing.Size(100, 24);
-            this.selectDogTwoBtn.TabIndex = 22;
-            this.selectDogTwoBtn.Text = "Select Dog Two";
-            this.selectDogTwoBtn.UseVisualStyleBackColor = true;
-            this.selectDogTwoBtn.Click += new System.EventHandler(this.selectDogTwoBtn_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(221, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Event Number";
+            // 
+            // LocationIDTxt
+            // 
+            this.LocationIDTxt.Location = new System.Drawing.Point(13, 67);
+            this.LocationIDTxt.Name = "LocationIDTxt";
+            this.LocationIDTxt.Size = new System.Drawing.Size(201, 20);
+            this.LocationIDTxt.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(224, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "LocationID";
             // 
             // CompetitionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 457);
-            this.Controls.Add(this.selectDogTwoBtn);
-            this.Controls.Add(this.selectDogThreeBtn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.LocationIDTxt);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.EventNumTxt);
             this.Controls.Add(this.classGroupComboBox);
             this.Controls.Add(this.dogListView);
             this.Controls.Add(this.saveComp);
@@ -219,7 +234,9 @@
         private System.Windows.Forms.ColumnHeader lastNameColumn;
         private System.Windows.Forms.ColumnHeader dogBreedColumn;
         private System.Windows.Forms.ComboBox classGroupComboBox;
-        public System.Windows.Forms.Button selectDogThreeBtn;
-        public System.Windows.Forms.Button selectDogTwoBtn;
+        private System.Windows.Forms.TextBox EventNumTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox LocationIDTxt;
+        private System.Windows.Forms.Label label5;
     }
 }

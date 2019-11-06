@@ -17,40 +17,26 @@ namespace DogShow
     {
         List<DogBreed> nameList = new List<DogBreed>();
         List<string> lastNames = new List<string>();
-
+        int breedIndex;
         Judgement judge = new Judgement();
-    
         int dogID;
+        int eventNum;
+        int locationID;
         public JudgementPage()
         {
             InitializeComponent();
-        }
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            nameList = judge.GetDogBreedList();
-
-            for (int i = 0; i < nameList.Count; i++)
+            foreach (string className in Classes.GetNames(typeof(Classes)))
             {
-                DogBreed dog = nameList.ElementAt(i);
-                competitorsBox.Items.Add(dog.DogName);
-
+                classGroupComboBox.Items.Add(className);
             }
-            lastNames = judge.GetLastNames();
-            for(int i = 0; i < lastNames.Count; i++)
-            {
-                string last = lastNames.ElementAt(i);
-                lastNameBox.Items.Add(last);
-            }
-
-
         }
 
         private void selectDogBtn_Click(object sender, EventArgs e)
         {
-            string dogName = competitorsBox.Text;
-            string dogLastName = lastNameBox.Text;
-            dogID = judge.GetDogID(dogName, dogLastName);
+            eventNum = Int32.Parse(eventNumTxt.Text);
+            locationID = Int32.Parse(locationIdTxt.Text);
+            string dogIdOne = dogView.SelectedItems[0].Tag.ToString();
+            dogID = Int32.Parse(dogIdOne);
             sizePointTxt.Enabled = true;
             eyePointTxt.Enabled = true;
             furColorPointTxt.Enabled = true;
@@ -70,6 +56,13 @@ namespace DogShow
             int locationID = Int32.Parse(locationIdTxt.Text);
             judge.InsertEvent(locationID, eventNum, dogID);
 
+        }
+
+        private void breedGroupComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            breedIndex = classGroupComboBox.SelectedIndex;
+            judge.SelectDoggo(dogView, breedIndex);
         }
     }
 

@@ -104,6 +104,12 @@
     <Compile Include="JudgementPage.Designer.cs">
       <DependentUpon>JudgementPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="PastCompetitions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PastCompetitions.Designer.cs">
+      <DependentUpon>PastCompetitions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JudgementPage.resx">
       <DependentUpon>JudgementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastCompetitions.resx">
+      <DependentUpon>PastCompetitions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
