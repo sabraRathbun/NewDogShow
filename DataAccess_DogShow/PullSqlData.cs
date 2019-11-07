@@ -164,9 +164,19 @@ namespace DataAccess_DogShow
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
-                string sql = "SELECT a.`DogID` from `dog` a join `scores` as b on a.`dogId` = b.`dogId` join `breeds` as c on a.`breedId` = c.`breedId` where c.`classID` = @0 and a.`dogID` = @1  or a.`dogID` = @2 or a.`dogID` = @3 order by b.`totalScore` desc;";
+                string sql = "SELECT DISTINCT a.`dogId` FROM `dog` as a join `events_table` as b on a.`dogId` = b.`dogID` join `breeds` as c join `scores` as d on d.`dogId` = b.`dogId` WHERE c.`classID` = @0 AND b.`eventNum` = @1 AND b.`Location` = @2 AND a.`dogId` = @3 OR a.`dogId` = @4 OR a.`DogId` = @5 ORDER BY d.`totalScore` desc";
 
-                var results = db.Fetch<int>(sql, classId, idOne, idTwo, idThree);
+                var results = db.Fetch<int>(sql, classId, eventNum, locationId, idOne, idTwo, idThree);
+                return results;
+            }
+        }
+        public List<string> PastCompetitionDoggos(int classID, int eventNum, int locationId)
+        {
+            using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
+            {
+                string sql = "SELECT DISTINCT a.`dogName` FROM `dog` as a JOIN `events_table` as b on a.`dogId` = b.`dogId` JOIN `competitions` as c on b.`dogId` = c.`dogId` JOIN `breeds` as d WHERE d.`classId` = @0 AND b.`eventNum` = @1 AND b.`location` = @2 ORDER BY c.`Placement` asc;";
+
+                var results = db.Fetch<string>(sql, classID, eventNum, locationId);
                 return results;
             }
         }

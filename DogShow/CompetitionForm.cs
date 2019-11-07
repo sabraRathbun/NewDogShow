@@ -35,6 +35,7 @@ namespace DogShow
 
         private void SelectBtn_Click(object sender, EventArgs e)
         {
+            
             dogList = comp.GetSelectedDoggos(dogListView, breedIndex, eventNum, locationID);
             first = dogList.ElementAt(0);
             second = dogList.ElementAt(1);
@@ -42,6 +43,7 @@ namespace DogShow
             firstLbl.Text = first;
             secondLbl.Text = second;
             thirdLbl.Text = third;
+            dogList.Clear();
         }
 
         private void SaveComp_Click(object sender, EventArgs e)

@@ -57,8 +57,6 @@ namespace Service_DogShow
             tempDogThreeID = Convert.ToInt32(dogThreeID);
             OrderDogIds(breedIndex, tempDogOneID, tempDogTwoID, tempDogThreeID, eventNum, locationId);
             return orderedDogsNames;
-            
-            
         }
         public List<string> DogPlacements(int breedIndex, int scoreIDOne, int scoreIDTwo, int scoreIDThree)
         {

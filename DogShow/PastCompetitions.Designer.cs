@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BreedGroupBox = new System.Windows.Forms.ComboBox();
+            this.ClassGroupComboBox = new System.Windows.Forms.ComboBox();
             this.EventNumTxt = new System.Windows.Forms.TextBox();
             this.LocationNumTxt = new System.Windows.Forms.TextBox();
             this.EnterBtn = new System.Windows.Forms.Button();
@@ -42,13 +42,14 @@
             this.SecondLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // BreedGroupBox
+            // ClassGroupComboBox
             // 
-            this.BreedGroupBox.FormattingEnabled = true;
-            this.BreedGroupBox.Location = new System.Drawing.Point(13, 13);
-            this.BreedGroupBox.Name = "BreedGroupBox";
-            this.BreedGroupBox.Size = new System.Drawing.Size(148, 21);
-            this.BreedGroupBox.TabIndex = 0;
+            this.ClassGroupComboBox.FormattingEnabled = true;
+            this.ClassGroupComboBox.Location = new System.Drawing.Point(13, 13);
+            this.ClassGroupComboBox.Name = "ClassGroupComboBox";
+            this.ClassGroupComboBox.Size = new System.Drawing.Size(148, 21);
+            this.ClassGroupComboBox.TabIndex = 0;
+            this.ClassGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.BreedGroupBox_SelectedIndexChanged);
             // 
             // EventNumTxt
             // 
@@ -72,6 +73,7 @@
             this.EnterBtn.TabIndex = 3;
             this.EnterBtn.Text = "Enter EventNum And Location ID";
             this.EnterBtn.UseVisualStyleBackColor = true;
+            this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // label1
             // 
@@ -167,7 +169,7 @@
             this.Controls.Add(this.EnterBtn);
             this.Controls.Add(this.LocationNumTxt);
             this.Controls.Add(this.EventNumTxt);
-            this.Controls.Add(this.BreedGroupBox);
+            this.Controls.Add(this.ClassGroupComboBox);
             this.Name = "PastCompetitions";
             this.Text = "PastCompetitions";
             this.ResumeLayout(false);
@@ -177,7 +179,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox BreedGroupBox;
+        private System.Windows.Forms.ComboBox ClassGroupComboBox;
         private System.Windows.Forms.TextBox EventNumTxt;
         private System.Windows.Forms.TextBox LocationNumTxt;
         private System.Windows.Forms.Button EnterBtn;

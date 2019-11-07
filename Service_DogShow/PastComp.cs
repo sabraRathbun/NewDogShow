@@ -8,8 +8,15 @@ using DataAccess_DogShow;
 
 namespace Service_DogShow
 {
-    class PastComp
+    public class PastComp
     {
         PullSqlData pull = new PullSqlData();
+        List<string> orderedDogs = new List<string>();
+
+        public List<string> OrderedDoggos(int breedIndex, int eventNum, int locationID)
+        {
+            orderedDogs = pull.PastCompetitionDoggos(breedIndex, eventNum, locationID);
+            return orderedDogs;
+        }
     }
 }

@@ -15,26 +15,8 @@ namespace Service_DogShow
         public List<Dog> dogList = new List<Dog>();
         public List<string> lastNames = new List<string>();
         PullSqlData pull = new PullSqlData();
-        int dogId;
-        int eventNum;
-        int locationID;
-        
-        public List<DogBreed> GetDogBreedList()
-        {
-            firstNameList = pull.GetDogBreed();
-            return firstNameList;
-        }
-        public List<string> GetLastNames()
-        {
-            lastNames = pull.GetDogLastName();
-            return lastNames;
-           
-        }
-        public int GetDogID(string name, string lastName)
-        {
-            dogId = pull.DogId(name, lastName);
-            return dogId;
-        }
+
+
         public void InsertScores(int total, int size, int eye, int furColor, int furLength, int dogID)
         {
             pull.InsertScores(total, size, eye, furColor, furLength, dogID);
