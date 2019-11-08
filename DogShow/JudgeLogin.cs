@@ -30,6 +30,7 @@ namespace DogShow
             if(log == true)
             {
                 judge.Show();
+                errorLbl.Visible = false;
             }
             else
             {
