@@ -108,13 +108,13 @@ namespace DataAccess_DogShow
 
             }
         }
-        public void InsertEvent(int locationID, int eventNum, int dogID)
+        public void InsertEvent(int locationID, int eventNum, int dogID, string time)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
-                string sql = "INSERT INTO `Events_Table` (`location`, `eventNum`, `dogID`) VALUES (@0, @1, @2); ";
+                string sql = "INSERT INTO `Events_Table` (`location`, `eventNum`, `dogID`, `eventTime`) VALUES (@0, @1, @2, @3); ";
 
-                db.Execute(sql, locationID, eventNum, dogID);
+                db.Execute(sql, locationID, eventNum, dogID, time);
 
             }
         }
@@ -170,13 +170,13 @@ namespace DataAccess_DogShow
                 return results;
             }
         }
-        public List<string> PastCompetitionDoggos(int classID, int eventNum, int locationId)
+        public List<string> PastCompetitionDoggos(int classID, int eventNum, int locationId, string time)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
-                string sql = "SELECT DISTINCT a.`dogName` FROM `dog` as a JOIN `events_table` as b on a.`dogId` = b.`dogId` JOIN `competitions` as c on b.`dogId` = c.`dogId` JOIN `breeds` as d WHERE d.`classId` = @0 AND b.`eventNum` = @1 AND b.`location` = @2 ORDER BY c.`Placement` asc;";
+                string sql = "SELECT DISTINCT a.`dogname` from `dog` as a join `events_table` as b on a.`dogId` = b.`dogId` join `competitions` as c on b.eventId = c.`eventId` join `breeds` as d where d.`classId` = @0 and b.`eventNum` = @1 and b.`eventtime` = @2 and b.`location` = @3 order by c.`placement` asc;";
 
-                var results = db.Fetch<string>(sql, classID, eventNum, locationId);
+                var results = db.Fetch<string>(sql, classID, eventNum, time, locationId);
                 return results;
             }
         }

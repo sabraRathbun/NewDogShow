@@ -40,6 +40,9 @@
             this.FirstLbl = new System.Windows.Forms.Label();
             this.ThirdLbl = new System.Windows.Forms.Label();
             this.SecondLbl = new System.Windows.Forms.Label();
+            this.timeTxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.errorLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ClassGroupComboBox
@@ -71,7 +74,7 @@
             this.EnterBtn.Name = "EnterBtn";
             this.EnterBtn.Size = new System.Drawing.Size(181, 23);
             this.EnterBtn.TabIndex = 3;
-            this.EnterBtn.Text = "Enter EventNum And Location ID";
+            this.EnterBtn.Text = "Submit";
             this.EnterBtn.UseVisualStyleBackColor = true;
             this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
@@ -89,9 +92,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(171, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(132, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Event Number";
+            this.label2.Text = "Event Number (MMDDYY)";
             // 
             // label3
             // 
@@ -153,11 +156,43 @@
             this.SecondLbl.TabIndex = 11;
             this.SecondLbl.Text = "Second";
             // 
+            // timeTxt
+            // 
+            this.timeTxt.Location = new System.Drawing.Point(13, 95);
+            this.timeTxt.Name = "timeTxt";
+            this.timeTxt.Size = new System.Drawing.Size(148, 20);
+            this.timeTxt.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(167, 101);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Time (## : ##)";
+            // 
+            // errorLbl
+            // 
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorLbl.Location = new System.Drawing.Point(10, 363);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(601, 17);
+            this.errorLbl.TabIndex = 14;
+            this.errorLbl.Text = "No dogs competed at this time/date/location. Please enter valid time/date/locatio" +
+    "n.";
+            this.errorLbl.Visible = false;
+            // 
             // PastCompetitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 427);
+            this.Controls.Add(this.errorLbl);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.timeTxt);
             this.Controls.Add(this.SecondLbl);
             this.Controls.Add(this.ThirdLbl);
             this.Controls.Add(this.FirstLbl);
@@ -191,5 +226,8 @@
         private System.Windows.Forms.Label FirstLbl;
         private System.Windows.Forms.Label ThirdLbl;
         private System.Windows.Forms.Label SecondLbl;
+        private System.Windows.Forms.TextBox timeTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label errorLbl;
     }
 }

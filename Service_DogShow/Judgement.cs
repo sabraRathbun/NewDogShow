@@ -21,9 +21,9 @@ namespace Service_DogShow
         {
             pull.InsertScores(total, size, eye, furColor, furLength, dogID);
         }
-        public void InsertEvent(int locationID, int EventID, int dogID)
+        public void InsertEvent(int locationID, int EventID, int dogID, string time)
         {
-            pull.InsertEvent(locationID, EventID, dogID);
+            pull.InsertEvent(locationID, EventID, dogID, time);
         }
         public void SelectDoggo(ListView dogView, int breedIndex)
         {

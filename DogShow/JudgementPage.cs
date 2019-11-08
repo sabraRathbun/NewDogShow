@@ -22,6 +22,7 @@ namespace DogShow
         int dogID;
         int eventNum;
         int locationID;
+        string time;
         public JudgementPage()
         {
             InitializeComponent();
@@ -54,7 +55,8 @@ namespace DogShow
             int eventNum = Int32.Parse(eventNumTxt.Text);
             judge.InsertScores(totalScore, sizeScore, eyeScore, furColorScore, furLengthScore, dogID);
             int locationID = Int32.Parse(locationIdTxt.Text);
-            judge.InsertEvent(locationID, eventNum, dogID);
+            time = timeTxt.Text;
+            judge.InsertEvent(locationID, eventNum, dogID, time);
 
         }
 

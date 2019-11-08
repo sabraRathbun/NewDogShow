@@ -49,6 +49,8 @@
             this.dogsFirstNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dogsLastNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dogsBreedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timeTxt = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // sizePointTxt
@@ -138,7 +140,7 @@
             // 
             // selectDogBtn
             // 
-            this.selectDogBtn.Location = new System.Drawing.Point(11, 64);
+            this.selectDogBtn.Location = new System.Drawing.Point(11, 90);
             this.selectDogBtn.Name = "selectDogBtn";
             this.selectDogBtn.Size = new System.Drawing.Size(215, 23);
             this.selectDogBtn.TabIndex = 13;
@@ -225,11 +227,29 @@
             // 
             this.dogsBreedColumn.Text = "Dog\'s Breed";
             // 
+            // timeTxt
+            // 
+            this.timeTxt.Location = new System.Drawing.Point(11, 64);
+            this.timeTxt.Name = "timeTxt";
+            this.timeTxt.Size = new System.Drawing.Size(75, 20);
+            this.timeTxt.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(93, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Time (##:##)";
+            // 
             // JudgementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 422);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.timeTxt);
             this.Controls.Add(this.dogView);
             this.Controls.Add(this.classGroupComboBox);
             this.Controls.Add(this.label7);
@@ -278,5 +298,7 @@
         private System.Windows.Forms.ColumnHeader dogsFirstNameColumn;
         private System.Windows.Forms.ColumnHeader dogsLastNameColumn;
         private System.Windows.Forms.ColumnHeader dogsBreedColumn;
+        private System.Windows.Forms.TextBox timeTxt;
+        private System.Windows.Forms.Label label8;
     }
 }

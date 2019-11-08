@@ -13,9 +13,9 @@ namespace Service_DogShow
         PullSqlData pull = new PullSqlData();
         List<string> orderedDogs = new List<string>();
 
-        public List<string> OrderedDoggos(int breedIndex, int eventNum, int locationID)
+        public List<string> OrderedDoggos(int breedIndex, int eventNum, int locationID, string time)
         {
-            orderedDogs = pull.PastCompetitionDoggos(breedIndex, eventNum, locationID);
+            orderedDogs = pull.PastCompetitionDoggos(breedIndex, eventNum, locationID, time);
             return orderedDogs;
         }
     }
