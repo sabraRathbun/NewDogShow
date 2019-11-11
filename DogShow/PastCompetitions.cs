@@ -30,6 +30,7 @@ namespace DogShow
 
         private void EnterBtn_Click(object sender, EventArgs e)
         {
+            PastDoggos.Clear();
             eventNum = Convert.ToInt32(EventNumTxt.Text);
             locationID = Convert.ToInt32(LocationNumTxt.Text);
             time = timeTxt.Text;
