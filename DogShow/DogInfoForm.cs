@@ -32,7 +32,10 @@ namespace DogShow
         public int breedID;
         private Image outline = Properties.Resources.pawOutlineNew;
         private Image filledIn = Properties.Resources.bluePaw;
-
+        public string furLength;
+        public string furColor;
+        public string size;
+        public string eyeColor;
 
 
         public DogInfoForm()
@@ -98,7 +101,7 @@ namespace DogShow
                 gender = "Male";
             }
 
-            info.InsertDog(breedID, firstName, lastName, gender);
+            info.InsertDog(breedID, firstName, lastName, gender, furLength, furColor, size, eyeColor);
 
         }
 
@@ -148,6 +151,7 @@ namespace DogShow
             if (shortRad.Checked != true)
             {
                 shortRad.Checked = true;
+                furLength = "Short";
                 longRad.Checked = false;
                 shortPicBox.Image = filledIn;
                 longPicBox.Image = outline;
@@ -156,6 +160,7 @@ namespace DogShow
             {
                 shortRad.Checked = false;
                 longRad.Checked = true;
+                furLength = "Long";
                 shortPicBox.Image = outline;
                 longPicBox.Image = filledIn;
             }
@@ -167,6 +172,7 @@ namespace DogShow
             {
                 longRad.Checked = true;
                 shortRad.Checked = false;
+                furLength = "Long";
                 longPicBox.Image = filledIn;
                 shortPicBox.Image = outline;
             }
@@ -174,6 +180,7 @@ namespace DogShow
             {
                 longRad.Checked = false;
                 shortRad.Checked = true;
+                furLength = "Short";
                 longPicBox.Image = outline;
                 shortPicBox.Image = filledIn;
             }
@@ -188,6 +195,7 @@ namespace DogShow
                 blueEyePicBox.Image = outline;
                 hazelPicBox.Image = outline;
                 multiEyePicBox.Image = outline;
+                eyeColor = "Brown";
             }
             else
             {
@@ -206,6 +214,7 @@ namespace DogShow
                 blueEyePicBox.Image = outline;
                 brownEyePicBox.Image = outline;
                 multiEyePicBox.Image = outline;
+                eyeColor = "Hazel";
             }
             else
             {
@@ -224,6 +233,7 @@ namespace DogShow
                 brownEyePicBox.Image = outline;
                 hazelPicBox.Image = outline;
                 multiEyePicBox.Image = outline;
+                eyeColor = "Blue";
             }
             else
             {
@@ -241,6 +251,7 @@ namespace DogShow
                 blueEyePicBox.Image = outline;
                 hazelPicBox.Image = outline;
                 brownEyePicBox.Image = outline;
+                eyeColor = "MultiColored";
             }
             else
             {
@@ -260,6 +271,7 @@ namespace DogShow
                 medPicBox.Image = outline;
                 largePicBox.Image = outline;
                 xtraLargePicBox.Image = outline;
+                size = "Toy";
             }
             else
             {
@@ -279,6 +291,7 @@ namespace DogShow
                 medPicBox.Image = outline;
                 largePicBox.Image = outline;
                 xtraLargePicBox.Image = outline;
+                size = "Small";
             }
             else
             {
@@ -298,6 +311,7 @@ namespace DogShow
                 toyPicBox.Image = outline;
                 largePicBox.Image = outline;
                 xtraLargePicBox.Image = outline;
+                size = "Medium";
             }
             else
             {
@@ -317,6 +331,7 @@ namespace DogShow
                 medPicBox.Image = outline;
                 toyPicBox.Image = outline;
                 xtraLargePicBox.Image = outline;
+                size = "Large";
             }
             else
             {
@@ -336,6 +351,7 @@ namespace DogShow
                 medPicBox.Image = outline;
                 largePicBox.Image = outline;
                 toyPicBox.Image = outline;
+                size = "Extra Large";
             }
             else
             {
@@ -359,6 +375,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Brown";
             }
             else
             {
@@ -382,6 +399,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "White";
             }
             else
             {
@@ -405,6 +423,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Black";
             }
             else
             {
@@ -428,6 +447,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Tan";
             }
             else
             {
@@ -451,6 +471,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Red";
             }
             else
             {
@@ -474,6 +495,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Yellow";
             }
             else
             {
@@ -497,6 +519,7 @@ namespace DogShow
                 brownFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "Blue";
             }
             else
             {
@@ -520,6 +543,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 brownFurPicBox.Image = outline;
                 goldPicBox.Image = outline;
+                furColor = "MultiColored";
             }
             else
             {
@@ -543,6 +567,7 @@ namespace DogShow
                 blueFurPicBox.Image = outline;
                 multiFurPicBox.Image = outline;
                 brownFurPicBox.Image = outline;
+                furColor = "Gold";
             }
             else
             {

@@ -33,13 +33,13 @@ namespace DataAccess_DogShow
             }
   
         }
-        public void InsertDoggo(int breedID, string name, string lastName, string gender)
+        public void InsertDoggo(int breedID, string name, string lastName, string gender, string furLength, string furColor, string size, string eyeColor)
         {
             using (var db = new Database("SERVER=agssqlw02;DATABASE=sabrarathbun;UID=sabrarathbun;PWD=Gam5I7zaNOw6Ydid;", "MySql.Data.MySqlClient"))
             {
-                string sql = "INSERT INTO `Dog` (`BreedID`, `DogName`, `dogLastName`, `DogGender`) VALUES (@0, @1, @2, @3); ";
+                string sql = "INSERT INTO `Dog` (`BreedID`, `DogName`, `dogLastName`, `DogGender`, `furLength`, `furColor`, `size`, `eyeColor`) VALUES (@0, @1, @2, @3, @4, @5, @6, @7); ";
 
-                db.Execute(sql, breedID, name, lastName, gender);
+                db.Execute(sql, breedID, name, lastName, gender, furLength, furColor, size, eyeColor);
 
             }
 
