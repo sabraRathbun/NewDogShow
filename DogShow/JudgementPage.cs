@@ -15,8 +15,6 @@ namespace DogShow
 {
     public partial class JudgementPage : Form
     {
-        List<DogBreed> nameList = new List<DogBreed>();
-        List<string> lastNames = new List<string>();
         int breedIndex;
         Judgement judge = new Judgement();
         int dogID;

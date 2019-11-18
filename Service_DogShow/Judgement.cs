@@ -11,9 +11,7 @@ namespace Service_DogShow
 {
     public class Judgement
     {
-        public List<DogBreed> firstNameList = new List<DogBreed>();
         public List<Dog> dogList = new List<Dog>();
-        public List<string> lastNames = new List<string>();
         PullSqlData pull = new PullSqlData();
 
 

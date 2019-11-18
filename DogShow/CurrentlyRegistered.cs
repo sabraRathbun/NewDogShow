@@ -29,7 +29,7 @@ namespace DogShow
             DogList = register.GetDogList();
             if (DogList.Any())
             {
-                currentIndex = 1;
+                currentIndex = 0;
                 DogBreed firstDog = DogList.First();
                 dogNameLbl.Text = firstDog.DogName;
                 dogBreedLbl.Text = firstDog.Description;
